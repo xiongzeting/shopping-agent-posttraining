@@ -1,0 +1,102 @@
+{
+  "audited_at": "2026-08-09T15:10:16.684218+00:00",
+  "files": {
+    "all_rows": 1000,
+    "all_sha256": "a4a8919dd6c51e72cb1bfaac08b0d048ccf523bf6c521d5bc9a3833df8e7750e",
+    "train_rows": 900,
+    "train_sha256": "f11c5507caef84aadcdb08eecbe37ccda06fb2ec6ff93737e374938b502cfeaf",
+    "validation_rows": 100,
+    "validation_sha256": "e36cda3671587896c77bfed55dde9cf2740353aac9fe5819a543f68e84a30649"
+  },
+  "model": {
+    "chat_template_sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "name": "Qwen3.5-2B",
+    "snapshot": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+    "tokenizer_config_sha256": "49e2b6e395f959f077f1e992b338919c0d4a9732fc6e613995e06557f843500c",
+    "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "transformers_revision": "7ea2320c76117e6742364808a666ef6f2fb40a67",
+    "weight_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1"
+  },
+  "remaining_training_host_gate": {
+    "checks": [
+      "single BF16-capable GPU with at least 94 GiB total and 92 GiB free",
+      "BF16 Flash Attention 2 CUDA forward/backward smoke test",
+      "longest kept example no-gradient-checkpointing memory smoke test"
+    ],
+    "required": true
+  },
+  "result": {
+    "expected_optimizer_steps": 339,
+    "formula": {
+      "epochs": 3.0,
+      "gradient_accumulation_steps": 8,
+      "per_device_train_batch_size": 1,
+      "visible_processes": 1
+    },
+    "max_length": 30000,
+    "train": {
+      "assistant_target_tokens": {
+        "max": 4982,
+        "mean": 1282.41,
+        "median": 1103.5,
+        "min": 306,
+        "p90": 2221,
+        "p95": 2765,
+        "total": 1154172
+      },
+      "dropped": 0,
+      "dropped_task_ids": [],
+      "input_tokens": {
+        "max": 29533,
+        "mean": 11930.78,
+        "median": 10959.0,
+        "min": 5071,
+        "p90": 18894,
+        "p95": 22253,
+        "total": 10737701
+      },
+      "kept": 900,
+      "kept_ratio": 1.0,
+      "total": 900
+    },
+    "validation": {
+      "assistant_target_tokens": {
+        "max": 3786,
+        "mean": 1253.88,
+        "median": 1015.0,
+        "min": 417,
+        "p90": 2097,
+        "p95": 2671,
+        "total": 125388
+      },
+      "dropped": 0,
+      "dropped_task_ids": [],
+      "input_tokens": {
+        "max": 29994,
+        "mean": 11951.73,
+        "median": 10762.5,
+        "min": 5928,
+        "p90": 19825,
+        "p95": 21244,
+        "total": 1195173
+      },
+      "kept": 100,
+      "kept_ratio": 1.0,
+      "total": 100
+    }
+  },
+  "runtime_packages": {
+    "accelerate": "1.14.0",
+    "flash-attn": "2.8.3+sm120cu13",
+    "flash-linear-attention": "0.5.2",
+    "liger-kernel": "0.8.1",
+    "peft": "0.20.0",
+    "swanlab": "0.9.1",
+    "torch": "2.11.0",
+    "torchvision": "0.26.0",
+    "transformers": "5.15.0.dev0"
+  },
+  "schema_version": "shopping-sft-token-audit-v3",
+  "scope": "model-and-tokenizer-only-no-gpu-streaming",
+  "status": "passed"
+}

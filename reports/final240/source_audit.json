@@ -1,0 +1,61 @@
+{
+  "historical_four_stage_source": "重点\\4.评测阶段",
+  "grpo230_source": "outputs\\evaluation\\final240-grpo230-harness-improved-deepseek-v4-pro-20260822\\runs\\grpo230",
+  "grpo230_trajectory_source": "重点\\4.评测阶段\\GRPO-step230-Final240-160gold\\trajectories.jsonl",
+  "grpo230_context_usage_recalculation": "GRPO-step230-Final240-160gold\\context-usage-recalculation.json",
+  "grpo230_context_usage_method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
+  "grpo230_context_usage_corrected": {
+    "p50": 0.25264623955431753,
+    "p95": 0.9593192896935933,
+    "max": 0.9996518105849582,
+    "tasks_over_budget": 0
+  },
+  "grpo230_judges_sha256": "9eb152647891f628ccfa03753e3d57d7c1e68f2996e2ec87e2821249a5986c73",
+  "qwen38_27b_source": "outputs\\evaluation\\final240-v24-qwen38-27b-base-nonthinking-deepseek-v4-pro-judge-r1-20260824\\runs\\qwen38_27b",
+  "qwen38_27b_judges_sha256": "db970681cfc3c97f9e02951b3b6274c2eeaedf40542ff65ecc3d1e120d3234ab",
+  "grpo230_v3_source": "重点\\4.评测阶段\\GRPO230-Harness-v3-r4-DeepSeek-Pro-Judge-20260826",
+  "grpo230_v3_judges_sha256": "ba456537b5f273a1ae2d1443dfcc42e7420c18e08580b7bf28b183d7bd0b0779",
+  "grpo230_v3_context_usage_recalculation": "grpo230-v3-context-usage-recalculation.json",
+  "grpo230_v3_context_usage_method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
+  "grpo230_v3_context_usage_corrected": {
+    "p50": 0.2426706128133705,
+    "p95": 0.99166782729805,
+    "max": 0.9999651810584959,
+    "tasks_over_budget": 0
+  },
+  "qwen38_27b_v3_source": "重点\\4.评测阶段\\Qwen38-27B-Harness-v3-r1-DeepSeek-Pro-Judge-20260826",
+  "qwen38_27b_v3_judges_sha256": "50ed92b67234049e3ab18da052ee324f6f06496eadd252048dcb5a1f27fcbc20",
+  "qwen38_27b_v3_context_usage_recalculation": "qwen38-27b-v3-context-usage-recalculation.json",
+  "qwen38_27b_v3_context_usage_method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
+  "qwen38_27b_v3_context_usage_corrected": {
+    "p50": 0.20301183844011142,
+    "p95": 0.4977768105849579,
+    "max": 0.9996169916434541,
+    "tasks_over_budget": 0
+  },
+  "qwen38_27b_judge_provider_split": {
+    "opencode_go_completed": 120,
+    "deepseek_official_completed": 120,
+    "model": "deepseek-v4-pro",
+    "thinking": false
+  },
+  "qwen38_27b_context_usage_recalculation": "qwen38-27b-context-usage-recalculation.json",
+  "qwen38_27b_context_usage_method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
+  "qwen38_27b_context_usage_corrected": {
+    "p50": 0.18582869080779946,
+    "p95": 0.41804491643454034,
+    "max": 0.9915738161559888,
+    "tasks_over_budget": 0
+  },
+  "frozen_rubric_sha256": "a911423cb9dbba7fc65ee0a3830276a12c62e0f3f99b6b704ffef3a94ae8c0ea",
+  "judge_protocol_aligned": true,
+  "newly_judged_models": [
+    "grpo230",
+    "qwen38_27b",
+    "grpo230_v3",
+    "qwen38_27b_v3"
+  ],
+  "grpo230_display_label": "GRPO230 v2",
+  "grpo230_v3_display_label": "GRPO230 v3",
+  "qwen38_27b_v3_display_label": "Qwen3.8-27B v3"
+}

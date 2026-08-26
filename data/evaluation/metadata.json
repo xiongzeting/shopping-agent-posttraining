@@ -1,0 +1,243 @@
+{
+  "asset": "shopbench_longhorizon_final_240_v2_2",
+  "challenge_slice_counts": {
+    "candidate_comparison": 10,
+    "evidence_verification": 10,
+    "long_horizon": 10,
+    "multi_option": 10,
+    "price_semantics": 10,
+    "search_reformulation": 10
+  },
+  "challenge_tasks": 60,
+  "contract": "environment-v2.4/reward-v4/benchmark-v2.2",
+  "core_domain_counts": {
+    "休闲娱乐文教": 20,
+    "家居家装": 20,
+    "家用电器数码": 20,
+    "服饰鞋包饰品": 20,
+    "母婴儿童": 20,
+    "生产材料农用品": 20,
+    "美妆个护健康": 20,
+    "运动户外交通": 20,
+    "食品饮品": 20
+  },
+  "core_tasks": 180,
+  "difficulty_bucket_counts": {
+    "10_15": 150,
+    "15_18": 44,
+    "18_plus": 3,
+    "under_10": 43
+  },
+  "difficulty_max": 19.038889,
+  "difficulty_mean": 12.751172,
+  "domain_counts": {
+    "休闲娱乐文教": 26,
+    "家居家装": 27,
+    "家用电器数码": 29,
+    "服饰鞋包饰品": 30,
+    "母婴儿童": 25,
+    "生产材料农用品": 29,
+    "美妆个护健康": 29,
+    "运动户外交通": 23,
+    "食品饮品": 22
+  },
+  "environment": "shopsimulator-environment-v2.4",
+  "evaluated": false,
+  "observation": "shopping-observation-v2",
+  "path": "data/evaluation/tasks.jsonl",
+  "previous_benchmark_overlap": 217,
+  "query_contract_replacement_count": 1,
+  "query_contract_replacements": [
+    {
+      "added_task_id": 419,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.466319,
+        "domain": "食品饮品",
+        "family_id": "7fed3114e1cd01c75928",
+        "feature_tags": [
+          "approximate_price",
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 3,
+        "suite": "core",
+        "task_id": 419
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.694444,
+        "domain": "食品饮品",
+        "family_id": "cf957c4e0dfbe9583a98",
+        "feature_tags": [
+          "approximate_price",
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "core",
+        "task_id": 405
+      },
+      "reason": "query_inconsistent_gold_annotation",
+      "removed_task_id": 405
+    }
+  ],
+  "replacement_count": 23,
+  "replacement_task_ids": [
+    {
+      "added_task_id": 18,
+      "removed_task_id": 1366
+    },
+    {
+      "added_task_id": 349,
+      "removed_task_id": 26
+    },
+    {
+      "added_task_id": 308,
+      "removed_task_id": 1254
+    },
+    {
+      "added_task_id": 203,
+      "removed_task_id": 1103
+    },
+    {
+      "added_task_id": 937,
+      "removed_task_id": 1159
+    },
+    {
+      "added_task_id": 56,
+      "removed_task_id": 802
+    },
+    {
+      "added_task_id": 87,
+      "removed_task_id": 791
+    },
+    {
+      "added_task_id": 961,
+      "removed_task_id": 704
+    },
+    {
+      "added_task_id": 247,
+      "removed_task_id": 536
+    },
+    {
+      "added_task_id": 1197,
+      "removed_task_id": 362
+    },
+    {
+      "added_task_id": 366,
+      "removed_task_id": 1336
+    },
+    {
+      "added_task_id": 340,
+      "removed_task_id": 123
+    },
+    {
+      "added_task_id": 579,
+      "removed_task_id": 849
+    },
+    {
+      "added_task_id": 1000,
+      "removed_task_id": 837
+    },
+    {
+      "added_task_id": 151,
+      "removed_task_id": 845
+    },
+    {
+      "added_task_id": 488,
+      "removed_task_id": 51
+    },
+    {
+      "added_task_id": 307,
+      "removed_task_id": 196
+    },
+    {
+      "added_task_id": 920,
+      "removed_task_id": 440
+    },
+    {
+      "added_task_id": 317,
+      "removed_task_id": 779
+    },
+    {
+      "added_task_id": 243,
+      "removed_task_id": 706
+    },
+    {
+      "added_task_id": 1413,
+      "removed_task_id": 1438
+    },
+    {
+      "added_task_id": 1375,
+      "removed_task_id": 251
+    },
+    {
+      "added_task_id": 516,
+      "removed_task_id": 1177
+    }
+  ],
+  "retained_from_v2_1": 217,
+  "retrieval_bucket_counts": {
+    "missing": 2,
+    "rank1": 144,
+    "rank21_150": 9,
+    "rank2_5": 61,
+    "rank6_20": 24
+  },
+  "reward": "shopsimulator-reward-v4",
+  "schema_version": "shopping-evaluation-dataset-v2.2",
+  "search_contract": "shopsimulator-multifield-bm25-v2.1",
+  "search_index_schema_version": 2,
+  "search_index_sha256": "f0fb09fa3a84fd1c617f776bb29b9afb333cd0146352079f73542810c379f38e",
+  "selected_family_duplicates": 0,
+  "selection_policy": {
+    "challenge": "severity percentiles 30-98 with quotas 1/2/3/3/1",
+    "challenge_difficulty_targets": {
+      "10_15": 32,
+      "15_18": 22,
+      "18_plus": 4,
+      "under_10": 2
+    },
+    "challenge_retrieval_targets": {
+      "missing": 1,
+      "rank1": 36,
+      "rank21_150": 2,
+      "rank2_5": 15,
+      "rank6_20": 6
+    },
+    "core": "difficulty thirds with low/mid/high quotas 4/10/6 per domain",
+    "difficulty_targets": {
+      "10_15": 138,
+      "15_18": 44,
+      "18_plus": 10,
+      "under_10": 48
+    },
+    "extreme_factor_penalty": true,
+    "retrieval_targets": {
+      "missing": 2,
+      "rank1": 144,
+      "rank21_150": 10,
+      "rank2_5": 60,
+      "rank6_20": 24
+    },
+    "targets_are_soft": true
+  },
+  "selection_seed": "benchmark-v2.2-query-contract-repair-20260812",
+  "semantic_training_candidates_excluded": 0,
+  "slice_path": "data/evaluation/slices.jsonl",
+  "slice_sha256": "05298d39e9f9ccaa974e179b7cf7cb25e6827da1b1e16e38c20a5f3dfd3006c4",
+  "source_pool": "items_eval_train.json:tag=eval",
+  "source_sha256": "57b10950a0064d16c81535a1d764a75879a508d250dde8a2a1787c5e6045559f",
+  "suite_counts": {
+    "challenge": 60,
+    "core": 180
+  },
+  "task_sha256": "1668e0693e795e2f9f7fcfacc45659da601376b020c2487853daf7dce1b4c71f",
+  "tasks": 240,
+  "termination": "shopping-termination-v3.1",
+  "tool_schema": "shopping-tools-v2",
+  "training_task_overlap": 0
+}

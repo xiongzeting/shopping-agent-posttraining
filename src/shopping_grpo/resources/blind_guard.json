@@ -1,0 +1,17 @@
+{
+  "asset": "shopbench_longhorizon_final_240_v2_2",
+  "manifest_version": 1,
+  "metadata_sha256": "3f8274dde489c90c401241b814e69de3f8adb183a441115d9976e2ed5ae3a054",
+  "required_metadata": {
+    "asset": "shopbench_longhorizon_final_240_v2_2",
+    "contract": "environment-v2.4/reward-v4/benchmark-v2.2",
+    "environment_version": "shopsimulator-environment-v2.4",
+    "evaluated": false,
+    "reward_version": "shopsimulator-reward-v4"
+  },
+  "schema_version": "shopping-blind-asset-guard-v1",
+  "split_role": "blind_final_test",
+  "task_count": 240,
+  "task_ids_resource": "blind_final_task_ids.json",
+  "task_sha256": "1668e0693e795e2f9f7fcfacc45659da601376b020c2487853daf7dce1b4c71f"
+}

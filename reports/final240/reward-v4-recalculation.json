@@ -1,0 +1,128 @@
+{
+  "schema_version": "dashboard-reward-v4-recalculation-v2",
+  "created_at": "2026-08-24T16:28:35.280691+00:00",
+  "scope": "reward_and_classification_replay",
+  "dashboard_models": [
+    "base",
+    "sft",
+    "grpo50",
+    "grpo100",
+    "grpo230",
+    "qwen38_27b"
+  ],
+  "denominator_per_model": 240,
+  "method": {
+    "purchase_trajectories": "Re-evaluated with current Reward v4 using the frozen query, recorded purchase, selected options, actual price, and executed steps.",
+    "partial_alternative_purchase": "Hard constraints all pass and at least one verifiable Soft fails; base utility = 0.5 + 0.3 * soft_score.",
+    "fixed_terminations": "assistant_final, repeat_loop, and max_steps were replayed with their current base utilities and the step penalty beginning at step 16.",
+    "guard_rejection": "invalid_action_limit is classified as guard_rejection with base utility -0.8 plus the same step penalty.",
+    "judge_and_rubric": "Unchanged; no Rubric or LLM-as-a-Judge call was repeated."
+  },
+  "reward_policy": {
+    "gold_purchase": 1.0,
+    "valid_alternative_purchase": 0.8,
+    "partial_alternative_purchase": "0.5 + 0.3 * soft_score",
+    "assistant_final": -0.8,
+    "guard_rejection": -0.8,
+    "repeat_loop": -0.6,
+    "step_penalty_start": 16
+  },
+  "results": {
+    "base": {
+      "strict_gold": 0,
+      "purchase_success": 0,
+      "reward_valid": 240,
+      "mean_final_reward": -0.7765833333333333,
+      "mean_weighted_score": 0.0034722222222222225,
+      "reward_type_counts": {
+        "assistant_final": 5,
+        "guard_rejection": 188,
+        "max_steps": 1,
+        "repeat_loop": 45,
+        "wrong_purchase": 1
+      }
+    },
+    "sft": {
+      "strict_gold": 142,
+      "purchase_success": 164,
+      "reward_valid": 240,
+      "mean_final_reward": 0.33679166666666666,
+      "mean_weighted_score": 0.7346792328042328,
+      "reward_type_counts": {
+        "assistant_final": 3,
+        "gold_purchase": 142,
+        "guard_rejection": 7,
+        "max_steps": 13,
+        "partial_alternative_purchase": 3,
+        "repeat_loop": 34,
+        "valid_alternative_purchase": 22,
+        "wrong_purchase": 16
+      }
+    },
+    "grpo50": {
+      "strict_gold": 154,
+      "purchase_success": 167,
+      "reward_valid": 240,
+      "mean_final_reward": 0.376625,
+      "mean_weighted_score": 0.7522089947089946,
+      "reward_type_counts": {
+        "assistant_final": 8,
+        "gold_purchase": 154,
+        "guard_rejection": 3,
+        "max_steps": 8,
+        "partial_alternative_purchase": 1,
+        "repeat_loop": 36,
+        "valid_alternative_purchase": 13,
+        "wrong_purchase": 17
+      }
+    },
+    "grpo100": {
+      "strict_gold": 153,
+      "purchase_success": 173,
+      "reward_valid": 240,
+      "mean_final_reward": 0.42383333333333334,
+      "mean_weighted_score": 0.7754282407407408,
+      "reward_type_counts": {
+        "assistant_final": 6,
+        "gold_purchase": 153,
+        "guard_rejection": 3,
+        "max_steps": 12,
+        "partial_alternative_purchase": 1,
+        "repeat_loop": 26,
+        "valid_alternative_purchase": 20,
+        "wrong_purchase": 19
+      }
+    },
+    "grpo230": {
+      "strict_gold": 163,
+      "purchase_success": 180,
+      "reward_valid": 240,
+      "mean_final_reward": 0.5130833333333333,
+      "mean_weighted_score": 0.8057109788359789,
+      "reward_type_counts": {
+        "gold_purchase": 163,
+        "guard_rejection": 3,
+        "max_steps": 3,
+        "partial_alternative_purchase": 1,
+        "repeat_loop": 34,
+        "valid_alternative_purchase": 17,
+        "wrong_purchase": 19
+      }
+    },
+    "qwen38_27b": {
+      "strict_gold": 146,
+      "purchase_success": 172,
+      "reward_valid": 240,
+      "mean_final_reward": 0.4547083333333333,
+      "mean_weighted_score": 0.8614583333333333,
+      "reward_type_counts": {
+        "early_abstain": 2,
+        "gold_purchase": 146,
+        "partial_alternative_purchase": 4,
+        "repeat_loop": 9,
+        "valid_alternative_purchase": 26,
+        "wrong_purchase": 53
+      }
+    }
+  }
+}

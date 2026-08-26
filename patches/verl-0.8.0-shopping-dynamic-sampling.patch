@@ -1,0 +1,159 @@
+diff --git a/ray_trainer.original.py b/ray_trainer.patched.py
+index d1eaa7b..8229c09 100644
+--- a/ray_trainer.original.py
++++ b/ray_trainer.patched.py
+@@ -49,6 +49,7 @@ from verl.trainer.ppo.metric_utils import (
+     process_validation_metrics,
+ )
+ from verl.trainer.ppo.reward import extract_reward
++from shopping_grpo.training.grpo.verl_dynamic_sampling import finalize_dynamic_sampling  # SHOPPING_GRPO_DYNAMIC_SAMPLING_PATCH_V6
+ from verl.trainer.ppo.utils import (
+     Role,
+     WorkerType,
+@@ -1308,6 +1309,12 @@ class RayPPOTrainer:
+             else False
+         )
+         ppo_mini_batch_size = self.config.actor_rollout_ref.actor.ppo_mini_batch_size
++        actual_prompt_groups = len(batch) // self.config.actor_rollout_ref.rollout.n
++        if actual_prompt_groups < 1:
++            raise RuntimeError("actor update received no complete rollout group")
++        ppo_mini_batch_size = min(ppo_mini_batch_size, actual_prompt_groups)
++        while actual_prompt_groups % ppo_mini_batch_size != 0:
++            ppo_mini_batch_size -= 1
+         ppo_mini_batch_size = ppo_mini_batch_size * self.config.actor_rollout_ref.rollout.n
+         ppo_epochs = self.config.actor_rollout_ref.actor.ppo_epochs
+         seed = self.config.actor_rollout_ref.actor.data_loader_seed
+@@ -1418,7 +1425,6 @@ class RayPPOTrainer:
+             else False
+         )
+         next_step_profile = False
+-
+         for epoch in range(current_epoch, self.config.trainer.total_epochs):
+             for batch_dict in self.train_dataloader:
+                 if hasattr(self.actor_rollout_wg, "async_calls_finalize_fn_exec"):
+@@ -1441,6 +1447,7 @@ class RayPPOTrainer:
+                 )
+ 
+                 gen_batch = self._get_gen_batch(batch)
++                prompt_batch = batch
+ 
+                 # pass global_steps to trace
+                 gen_batch.meta_info["global_steps"] = self.global_steps
+@@ -1468,7 +1475,8 @@ class RayPPOTrainer:
+                         if curr_step_profile:
+                             self.llm_server_manager.start_profile()
+                         combined_gen_output = self.async_rollout_manager.generate_sequences(combined_gen_batch)
+-                        self.checkpoint_manager.sleep_replicas()
++                        if not self.config.shopping_dynamic_sampling.enable:
++                            self.checkpoint_manager.sleep_replicas()
+                         if curr_step_profile:
+                             self.llm_server_manager.stop_profile()
+ 
+@@ -1499,30 +1507,92 @@ class RayPPOTrainer:
+ 
+                     if "response_mask" not in batch.batch.keys():
+                         batch.batch["response_mask"] = compute_response_mask(batch)
+-                    # Balance the number of valid tokens across DP ranks.
+-                    # NOTE: This usually changes the order of data in the `batch`,
+-                    # which won't affect the advantage calculation (since it's based on uid),
+-                    # but might affect the loss calculation (due to the change of mini-batching).
++                    with marked_timer("reward", timing_raw, color="yellow"):
++                        # compute reward model score
++                        if self.use_rm and "rm_scores" not in batch.batch.keys():
++                            batch_reward = self._compute_reward_colocate(batch)
++                            batch = batch.union(batch_reward)
++
++                        # extract reward_tensor and reward_extra_infos_dict for training
++                        reward_tensor, reward_extra_infos_dict = extract_reward(batch)
++
++                    batch, reward_tensor, reward_extra_infos_dict, shopping_sampling_metrics = (
++                        finalize_dynamic_sampling(
++                            self,
++                            prompt_batch,
++                            gen_batch,
++                            batch,
++                            reward_tensor,
++                            reward_extra_infos_dict,
++                            timing_raw,
++                            curr_step_profile=curr_step_profile,
++                        )
++                    )
++                    metrics.update(shopping_sampling_metrics)
++                    if batch is None:
++                        metrics["sampling/skipped_actor_update"] = 1.0
++                        if self.config.trainer.save_freq > 0 and (
++                            is_last_step
++                            or self.global_steps % self.config.trainer.save_freq == 0
++                        ):
++                            with marked_timer("save_checkpoint", timing_raw, color="green"):
++                                self._save_checkpoint()
++                        if self.config.trainer.test_freq > 0 and (
++                            is_last_step
++                            or self.global_steps % self.config.trainer.test_freq == 0
++                        ):
++                            with marked_timer("testing", timing_raw, color="green"):
++                                val_metrics = self._validate()
++                                if is_last_step:
++                                    last_val_metrics = val_metrics
++                            metrics.update(val_metrics)
++                        with marked_timer("stop_profile", timing_raw):
++                            next_step_profile = (
++                                self.global_steps + 1 in self.config.global_profiler.steps
++                                if self.config.global_profiler.steps is not None
++                                else False
++                            )
++                            self._stop_profiling(
++                                curr_step_profile and not next_step_profile
++                                if self.config.global_profiler.profile_continuous_steps
++                                else curr_step_profile
++                            )
++                            prev_step_profile = curr_step_profile
++                            curr_step_profile = next_step_profile
++                        metrics.update(
++                            {
++                                "training/global_step": self.global_steps,
++                                "training/epoch": epoch,
++                            }
++                        )
++                        logger.log(data=metrics, step=self.global_steps)
++                        progress_bar.update(1)
++                        self.global_steps += 1
++                        if is_last_step:
++                            if hasattr(self.actor_rollout_wg, "async_calls_finalize_fn_exec"):
++                                self.actor_rollout_wg.async_calls_finalize_fn_exec(blocking=True)
++                            self._shutdown_dump_executor()
++                            pprint(f"Final validation metrics: {last_val_metrics}")
++                            progress_bar.close()
++                            return
++                        continue
++                    metrics["sampling/skipped_actor_update"] = 0.0
++
++                    # Dynamic sampling must run before balancing because balancing
++                    # changes trajectory order while retry selection maps groups
++                    # back to their original prompt rows.
+                     if self.config.trainer.balance_batch:
+                         self._balance_batch(batch, metrics=metrics)
+ 
+-                    # compute global_valid tokens
+-                    batch.meta_info["global_token_num"] = torch.sum(batch.batch["attention_mask"], dim=-1).tolist()
+-                    # get images_seqlens
++                    batch.meta_info["global_token_num"] = torch.sum(
++                        batch.batch["attention_mask"], dim=-1
++                    ).tolist()
+                     images_seqlens_all = []
+                     for multi_modal_input in batch.non_tensor_batch["multi_modal_inputs"]:
+                         if "image_grid_thw" not in multi_modal_input.keys():
+                             continue
+                         images_seqlens_all.extend(multi_modal_input["images_seqlens"].tolist())
+                     batch.meta_info["images_seqlens"] = images_seqlens_all
+-                    with marked_timer("reward", timing_raw, color="yellow"):
+-                        # compute reward model score
+-                        if self.use_rm and "rm_scores" not in batch.batch.keys():
+-                            batch_reward = self._compute_reward_colocate(batch)
+-                            batch = batch.union(batch_reward)
+-
+-                        # extract reward_tensor and reward_extra_infos_dict for training
+-                        reward_tensor, reward_extra_infos_dict = extract_reward(batch)
+ 
+                     # Operating Mode Selection:
+                     # - Bypass mode: Sets old_log_probs = rollout_log_probs (2 policies: π_rollout, π_θ)

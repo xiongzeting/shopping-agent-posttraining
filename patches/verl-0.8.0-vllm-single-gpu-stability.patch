@@ -1,0 +1,63 @@
+--- verl/workers/rollout/vllm_rollout/vllm_async_server.py
++++ verl/workers/rollout/vllm_rollout/vllm_async_server.py
+@@ -252,0 +253,12 @@ class vLLMHttpServer:
++        single_gpu_executor = (
++            self.config.tensor_model_parallel_size == 1
++            and self.config.data_parallel_size == 1
++            and self.nnodes == 1
++            and self.gpus_per_node == 1
++        )
++        distributed_executor_backend = "uni" if single_gpu_executor else "mp"
++        logger.info(
++            "vLLM distributed executor backend: %s (single_gpu=%s)",
++            distributed_executor_backend,
++            single_gpu_executor,
++        )  # SHOPPING_GRPO_VLLM_SINGLE_GPU_STABILITY_PATCH_V2
+@@ -257 +269 @@ class vLLMHttpServer:
+-            "distributed_executor_backend": "mp",
++            "distributed_executor_backend": distributed_executor_backend,
+@@ -541,4 +553,40 @@ class vLLMHttpServer:
+-        # Get final response
+-        final_res: Optional[RequestOutput] = None
+-        async for output in generator:
+-            final_res = output
++        # Never allow an EngineCore stall to leave every AgentLoop request
++        # waiting forever. Abort the individual request, then return an empty,
++        # explicitly invalid trajectory so dynamic sampling can retry it.
++        async def collect_final_response() -> Optional[RequestOutput]:
++            final_response: Optional[RequestOutput] = None
++            async for output in generator:
++                final_response = output
++            return final_response
++
++        timeout_seconds = float(os.getenv("SHOPPING_GRPO_VLLM_GENERATION_TIMEOUT_SECONDS", "180"))
++        if timeout_seconds <= 0:
++            raise ValueError("SHOPPING_GRPO_VLLM_GENERATION_TIMEOUT_SECONDS must be positive")
++        try:
++            final_res = await asyncio.wait_for(collect_final_response(), timeout=timeout_seconds)
++        except asyncio.TimeoutError:
++            try:
++                abort_result = await asyncio.wait_for(
++                    self.abort_request(request_id, reset_prefix_cache=False),
++                    timeout=10,
++                )
++            except asyncio.TimeoutError:
++                abort_result = {"aborted": False, "error": "abort timed out after 10 seconds"}
++            except Exception as abort_error:
++                abort_result = {"aborted": False, "error": repr(abort_error)}
++            message = (
++                f"SHOPPING_GRPO_VLLM_GENERATION_TIMEOUT request_id={request_id} "
++                f"timeout_seconds={timeout_seconds:g} abort_result={abort_result}"
++            )
++            logger.error(message)
++            return TokenOutput(
++                token_ids=[],
++                log_probs=None,
++                routed_experts=None,
++                stop_reason="aborted",
++                extra_fields={
++                    "global_steps": self.global_steps,
++                    "shopping_generation_timeout": True,
++                    "shopping_generation_timeout_message": message,
++                },
++            )

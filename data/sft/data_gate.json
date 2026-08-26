@@ -1,0 +1,262 @@
+{
+  "audit": {
+    "audited_rows": 1000,
+    "collection_schema_version": "shopping-sft-collection-v3",
+    "input_sha256": "378013acbd3d68924ab3d78a8bf4ef69ce4656c2b8c40efa919636ff93b68eea",
+    "products_sha256": "57b10950a0064d16c81535a1d764a75879a508d250dde8a2a1787c5e6045559f",
+    "quality_gate_passed_rows": 1000,
+    "search_contract": "shopsimulator-multifield-bm25-v2.1",
+    "search_index_sha256": "f0fb09fa3a84fd1c617f776bb29b9afb333cd0146352079f73542810c379f38e",
+    "source_rows": 1000,
+    "teacher_selection": "shopping-teacher-recoverable-process-v4"
+  },
+  "coverage_counts": {
+    "candidate_comparison": 474,
+    "clean_critical_actions": 1000,
+    "evidence_verification": 932,
+    "explicit_terminal_buy": 1000,
+    "guard_recovery": 501,
+    "long": 123,
+    "loop_recovery": 596,
+    "medium_or_long": 523,
+    "multiple_options": 410,
+    "search_reformulation": 596,
+    "variant_selection": 1000
+  },
+  "coverage_minimums": {
+    "candidate_comparison": 250,
+    "clean_critical_actions": 1000,
+    "evidence_verification": 350,
+    "explicit_terminal_buy": 1000,
+    "guard_recovery": 50,
+    "long": 100,
+    "loop_recovery": 200,
+    "medium_or_long": 350,
+    "multiple_options": 200,
+    "search_reformulation": 200,
+    "variant_selection": 200
+  },
+  "deficits": {},
+  "length_histogram": {
+    "4": 18,
+    "5": 18,
+    "6": 56,
+    "7": 29,
+    "8": 172,
+    "9": 63,
+    "10": 121,
+    "11": 59,
+    "12": 46,
+    "13": 33,
+    "14": 49,
+    "15": 55,
+    "16": 36,
+    "17": 40,
+    "18": 33,
+    "19": 17,
+    "20": 32,
+    "21": 27,
+    "22": 12,
+    "23": 18,
+    "24": 9,
+    "25": 5,
+    "26": 9,
+    "27": 5,
+    "28": 3,
+    "29": 9,
+    "30": 3,
+    "31": 8,
+    "32": 2,
+    "33": 3,
+    "35": 4,
+    "36": 2,
+    "37": 1,
+    "39": 2,
+    "42": 1
+  },
+  "policy": {
+    "caps": {
+      "eight_step_max_share": 0.3,
+      "exact_action_sequence_max_share": 0.12
+    },
+    "coverage_min_share": {
+      "candidate_comparison": 0.25,
+      "clean_critical_actions": 1.0,
+      "evidence_verification": 0.35,
+      "explicit_terminal_buy": 1.0,
+      "guard_recovery": 0.05,
+      "long": 0.1,
+      "loop_recovery": 0.2,
+      "medium_or_long": 0.35,
+      "multiple_options": 0.2,
+      "search_reformulation": 0.2,
+      "variant_selection": 0.2
+    },
+    "retrieval": {
+      "missing_min_share": 0.02,
+      "rank1_max_share": 0.6,
+      "rank21_150_min_share": 0.06,
+      "rank2_5_min_share": 0.2,
+      "rank6_20_min_share": 0.1
+    },
+    "target_rows": 1000
+  },
+  "retrieval_rank_counts": {
+    "missing": 30,
+    "rank1": 501,
+    "rank21_150": 70,
+    "rank2_5": 299,
+    "rank6_20": 100
+  },
+  "rows": 1000,
+  "schema_version": "shopping-teacher-data-gate-v1",
+  "status": "passed",
+  "top_sequence_count": 75,
+  "top_sequences": [
+    {
+      "count": 75,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "select_option",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "buy_now"
+      ],
+      "sha256": "2060d32fc7f226e07c9196a403cd58b00d5550957422cb64e8af64cb80f93beb"
+    },
+    {
+      "count": 60,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "select_option",
+        "buy_now"
+      ],
+      "sha256": "d2e90f09b52300dc8dcb113124050bf7f1adae854637651e0ef40a2ae67af0d4"
+    },
+    {
+      "count": 22,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "select_option",
+        "select_option",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "buy_now"
+      ],
+      "sha256": "44d642448aae5f09373f6b5ab444d7351427e025deb0ebe6e2a50fd9a0a27641"
+    },
+    {
+      "count": 19,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "select_option",
+        "select_option",
+        "buy_now"
+      ],
+      "sha256": "237524d7e62b7dbd467dfce5d630336a72cc25e7fd5e4602ec7c273a582be1f1"
+    },
+    {
+      "count": 19,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "view_features",
+        "prev_page",
+        "select_option",
+        "view_description",
+        "prev_page",
+        "buy_now"
+      ],
+      "sha256": "adda741f95987890f0e16973be0bece509dc87d36bc6d83bbd536c7519bc9073"
+    },
+    {
+      "count": 19,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "select_option",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "view_reviews",
+        "prev_page",
+        "buy_now"
+      ],
+      "sha256": "de66d56279837612da896b398beb4eeb6332d7f75cf977aa503281249b69bbc5"
+    },
+    {
+      "count": 19,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "view_reviews",
+        "prev_page",
+        "select_option",
+        "buy_now"
+      ],
+      "sha256": "981664d5b5ce9119a6235d5a947adde16cedf4708d68b7a847a72b204783912d"
+    },
+    {
+      "count": 18,
+      "sequence": [
+        "search_products",
+        "back_to_search",
+        "search_products",
+        "open_product",
+        "select_option",
+        "view_features",
+        "prev_page",
+        "view_description",
+        "prev_page",
+        "buy_now"
+      ],
+      "sha256": "4d6cf2fad38d00735350042a2bec8dce904d4d47ddc967354d19a25de8186e97"
+    },
+    {
+      "count": 18,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "view_features",
+        "prev_page",
+        "select_option",
+        "buy_now"
+      ],
+      "sha256": "de7f5b0ac212e16baefebdda803bfe5acc187f78f1af37c4ce3f36f8e5f56745"
+    },
+    {
+      "count": 18,
+      "sequence": [
+        "search_products",
+        "open_product",
+        "select_option",
+        "select_option",
+        "buy_now"
+      ],
+      "sha256": "770b28aceadc5f725085a259855ba4ce2c9ae143d193a48d566f40ce5055d74b"
+    }
+  ],
+  "unique_action_sequences": 452,
+  "unique_task_ids": 1000
+}

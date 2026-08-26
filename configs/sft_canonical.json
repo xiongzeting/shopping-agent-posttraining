@@ -1,0 +1,102 @@
+{
+  "schema_version": "shopping-sft-run-plan-v2",
+  "name": "fresh-sft-final1000-v5-30k",
+  "workflow": "Baseline -> SFT -> GRPO -> Evaluation",
+  "data": {
+    "path": "data/sft",
+    "rows": 1000,
+    "train": 900,
+    "validation": 100,
+    "stable_teacher_rows": 600,
+    "corrective_teacher_rows": 400,
+    "corrective_mix": {
+      "loop_recovery": 160,
+      "near_miss_rejection": 101,
+      "option_grounding": 99,
+      "terminal_tool_commit": 40
+    },
+    "length_mix": {
+      "short": 477,
+      "medium": 400,
+      "long": 123
+    },
+    "retrieval_mix": {
+      "rank1": 501,
+      "rank2_5": 299,
+      "rank6_20": 100,
+      "rank21_150": 70,
+      "missing": 30
+    },
+    "data_gate": "shopping-teacher-data-gate-v1",
+    "evaluation_overlap": 0
+  },
+  "model": {
+    "name": "Qwen3.5-2B",
+    "path": "Qwen3.5-2B",
+    "snapshot": "15852e8c16360a2fea060d615a32b45270f8a8fc"
+  },
+  "training": {
+    "policy": "fresh_from_base",
+    "max_length": 30000,
+    "overlength_policy": "drop_full_example_without_truncation",
+    "epochs": 3.0,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 0.0001,
+    "warmup_ratio": 0.03,
+    "dtype": "bf16",
+    "gradient_checkpointing": false,
+    "torch_empty_cache_steps": 1,
+    "pytorch_alloc_conf": "expandable_segments:True,garbage_collection_threshold:0.8",
+    "attention_implementation": "flash_attention_2",
+    "flash_linear_attention_runtime": true,
+    "liger_kernel": true,
+    "device_map": null,
+    "qlora": false,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "seed": 42,
+    "max_steps": -1,
+    "effective_train_examples": 900,
+    "effective_validation_examples": 100,
+    "expected_optimizer_steps": 339,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "in_proj_qkv",
+      "in_proj_z",
+      "in_proj_b",
+      "in_proj_a",
+      "out_proj"
+    ]
+  },
+  "runtime": {
+    "python": "3.12",
+    "torch": "2.11.0",
+    "cuda_major": 13,
+    "flash_attn": "2.8.3+sm120cu13",
+    "flash_linear_attention": "0.5.2",
+    "liger_kernel": "0.8.1",
+    "visible_gpu_count": 1,
+    "minimum_gpu_memory_gib": 94,
+    "minimum_free_gpu_memory_gib": 92
+  },
+  "outputs": {
+    "run_id": "fresh-sft-convergence-repair-v5-30k",
+    "run_dir": "outputs/runs/sft/fresh-sft-convergence-repair-v5-30k",
+    "adapter": "outputs/models/fresh-sft-convergence-repair-v5-30k-lora",
+    "merged": "outputs/models/fresh-sft-convergence-repair-v5-30k-merged"
+  },
+  "remaining_gpu_gates": [
+    "single-GPU BF16 Flash Attention 2 smoke test",
+    "longest-kept-example forward/backward smoke test without gradient checkpointing",
+    "verify peak memory before full training"
+  ]
+}

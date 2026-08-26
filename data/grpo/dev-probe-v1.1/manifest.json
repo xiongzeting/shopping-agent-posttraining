@@ -1,0 +1,393 @@
+{
+  "difficulty_distribution": {
+    "10to15": 45,
+    "15to18": 30,
+    "ge18": 10,
+    "lt10": 15
+  },
+  "domain_distribution": {
+    "休闲娱乐文教": 15,
+    "家居家装": 31,
+    "家用电器数码": 14,
+    "服饰鞋包饰品": 13,
+    "母婴儿童": 5,
+    "生产材料农用品": 9,
+    "美妆个护健康": 10,
+    "运动户外交通": 1,
+    "食品饮品": 2
+  },
+  "outputs": {
+    "tasks-full.jsonl": {
+      "rows": 100,
+      "sha256": "4a524a27689ed303eb099a8b1949fca3bc957af3677a31b53752130fc887486d"
+    },
+    "tasks.jsonl": {
+      "rows": 100,
+      "sha256": "eb988593562a1dbbc20d91f19d782f647b7dee5dcfcf1218f9172eba287fd441"
+    }
+  },
+  "replacement_count": 14,
+  "replacements": [
+    {
+      "added_task_id": 17568,
+      "new": {
+        "category": "住宅家具›沙发类›功能沙发",
+        "difficulty_band": "10to15",
+        "difficulty_score": 14.723529,
+        "domain": "家居家装",
+        "family_id": "b257795ebf035fd02be2",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "search_reformulation",
+        "task_id": 17568
+      },
+      "old": {
+        "category": "住宅家具›沙发类›功能沙发",
+        "difficulty_band": "10to15",
+        "difficulty_score": 14.433333,
+        "domain": "家居家装",
+        "family_id": "49910fa4b6975c45ed0a",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "search_reformulation",
+        "task_id": 21656
+      },
+      "removed_task_id": 21656
+    },
+    {
+      "added_task_id": 6119,
+      "new": {
+        "category": "床上用品›床品定制/定做(新)›床垫定制定做",
+        "difficulty_band": "10to15",
+        "difficulty_score": 13.476949,
+        "domain": "家居家装",
+        "family_id": "1efd6a03c8fc7e0a2cca",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 6119
+      },
+      "old": {
+        "category": "床上用品›床品定制/定做(新)›床垫定制定做",
+        "difficulty_band": "10to15",
+        "difficulty_score": 13.456373,
+        "domain": "家居家装",
+        "family_id": "13059300f2f691aaf634",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 12759
+      },
+      "removed_task_id": 12759
+    },
+    {
+      "added_task_id": 16554,
+      "new": {
+        "category": "童装/婴儿装/亲子装›儿童户外服›儿童冲锋衣",
+        "difficulty_band": "10to15",
+        "difficulty_score": 14.061111,
+        "domain": "母婴儿童",
+        "family_id": "959a8164b0d5e50128a0",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 16554
+      },
+      "old": {
+        "category": "童装/婴儿装/亲子装›儿童户外服›儿童冲锋衣",
+        "difficulty_band": "10to15",
+        "difficulty_score": 14.07191,
+        "domain": "母婴儿童",
+        "family_id": "8ee61e9783c9de955784",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 17717
+      },
+      "removed_task_id": 17717
+    },
+    {
+      "added_task_id": 16936,
+      "new": {
+        "category": "文具电教/文化用品/商务用品›画具/画材用品›水粉颜料",
+        "difficulty_band": "10to15",
+        "difficulty_score": 12.866667,
+        "domain": "休闲娱乐文教",
+        "family_id": "8c1929e429f8c5a0eec0",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 16936
+      },
+      "old": {
+        "category": "文具电教/文化用品/商务用品›画具/画材用品›水粉颜料",
+        "difficulty_band": "10to15",
+        "difficulty_score": 12.859331,
+        "domain": "休闲娱乐文教",
+        "family_id": "12a29c02e3ea60bdd799",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 19929
+      },
+      "removed_task_id": 19929
+    },
+    {
+      "added_task_id": 18295,
+      "new": {
+        "category": "住宅家具›沙发类›功能沙发",
+        "difficulty_band": "10to15",
+        "difficulty_score": 13.202924,
+        "domain": "家居家装",
+        "family_id": "a22aa72a6e6f41330a11",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "search_reformulation",
+        "task_id": 18295
+      },
+      "old": {
+        "category": "住宅家具›沙发类›功能沙发",
+        "difficulty_band": "10to15",
+        "difficulty_score": 13.322222,
+        "domain": "家居家装",
+        "family_id": "eb9274e1257a695e46fd",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "search_reformulation",
+        "task_id": 19082
+      },
+      "removed_task_id": 19082
+    },
+    {
+      "added_task_id": 19371,
+      "new": {
+        "category": "文具电教/文化用品/商务用品›画具/画材用品›水粉颜料",
+        "difficulty_band": "10to15",
+        "difficulty_score": 10.393651,
+        "domain": "休闲娱乐文教",
+        "family_id": "5dd2825c86f42b8de5f0",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 19371
+      },
+      "old": {
+        "category": "文具电教/文化用品/商务用品›画具/画材用品›水粉颜料",
+        "difficulty_band": "10to15",
+        "difficulty_score": 10.392005,
+        "domain": "休闲娱乐文教",
+        "family_id": "ca64202e034850842279",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 19694
+      },
+      "removed_task_id": 19694
+    },
+    {
+      "added_task_id": 22210,
+      "new": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 16.094444,
+        "domain": "家居家装",
+        "family_id": "6835926e543a4cb5f996",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 22210
+      },
+      "old": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 16.536015,
+        "domain": "家居家装",
+        "family_id": "50a01b76ef7c03be4c5a",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 22704
+      },
+      "removed_task_id": 22704
+    },
+    {
+      "added_task_id": 18507,
+      "new": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.30174,
+        "domain": "家居家装",
+        "family_id": "3deb753253a13858ffbf",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 18507
+      },
+      "old": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.893651,
+        "domain": "家居家装",
+        "family_id": "2567a55a78c46c1c2cf7",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 20826
+      },
+      "removed_task_id": 20826
+    },
+    {
+      "added_task_id": 21432,
+      "new": {
+        "category": "住宅家具›沙发类›功能沙发",
+        "difficulty_band": "15to18",
+        "difficulty_score": 17.814233,
+        "domain": "家居家装",
+        "family_id": "4969601952d307df374b",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "search_reformulation",
+        "task_id": 21432
+      },
+      "old": {
+        "category": "住宅家具›沙发类›功能沙发",
+        "difficulty_band": "15to18",
+        "difficulty_score": 17.673835,
+        "domain": "家居家装",
+        "family_id": "b428c23465e8524f2417",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "search_reformulation",
+        "task_id": 22659
+      },
+      "removed_task_id": 22659
+    },
+    {
+      "added_task_id": 17774,
+      "new": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.143093,
+        "domain": "家居家装",
+        "family_id": "c3a3e5bdd0247a5beb56",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 17774
+      },
+      "old": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.234722,
+        "domain": "家居家装",
+        "family_id": "674d17f8d7fa709d47b1",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 19232
+      },
+      "removed_task_id": 19232
+    },
+    {
+      "added_task_id": 19482,
+      "new": {
+        "category": "运动服/休闲服装›运动套装",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.876305,
+        "domain": "服饰鞋包饰品",
+        "family_id": "50a8a70072549a1ccf2d",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "focused_verification",
+        "task_id": 19482
+      },
+      "old": {
+        "category": "运动服/休闲服装›运动套装",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.915686,
+        "domain": "服饰鞋包饰品",
+        "family_id": "9d086c583d06fafb08fd",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "focused_verification",
+        "task_id": 17818
+      },
+      "removed_task_id": 17818
+    },
+    {
+      "added_task_id": 22522,
+      "new": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.076389,
+        "domain": "家居家装",
+        "family_id": "394c36db89874862b9cb",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 22522
+      },
+      "old": {
+        "category": "家居饰品›装饰画›工艺画",
+        "difficulty_band": "15to18",
+        "difficulty_score": 16.093607,
+        "domain": "家居家装",
+        "family_id": "819aa9ac1932bf61b5e0",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 23339
+      },
+      "removed_task_id": 23339
+    },
+    {
+      "added_task_id": 5903,
+      "new": {
+        "category": "家装主材›卫浴五金›卫浴五金/挂件›美容镜",
+        "difficulty_band": "15to18",
+        "difficulty_score": 15.97369,
+        "domain": "家居家装",
+        "family_id": "8152494a5ba4beade9d8",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "search_reformulation",
+        "task_id": 5903
+      },
+      "old": {
+        "category": "家装主材›卫浴五金›卫浴五金/挂件›美容镜",
+        "difficulty_band": "15to18",
+        "difficulty_score": 16.032653,
+        "domain": "家居家装",
+        "family_id": "40ced774ddd79eb2369c",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "search_reformulation",
+        "task_id": 10254
+      },
+      "removed_task_id": 10254
+    },
+    {
+      "added_task_id": 14618,
+      "new": {
+        "category": "家装主材›卫浴五金›卫浴五金/挂件›美容镜",
+        "difficulty_band": "15to18",
+        "difficulty_score": 16.361247,
+        "domain": "家居家装",
+        "family_id": "342eb3415c022c9cca7f",
+        "selection_reason": "dev-probe-v1.1 matched replacement for hard-invalid option mapping",
+        "selection_strategy": "multi_option",
+        "task_id": 14618
+      },
+      "old": {
+        "category": "家装主材›卫浴五金›卫浴五金/挂件›美容镜",
+        "difficulty_band": "15to18",
+        "difficulty_score": 16.403794,
+        "domain": "家居家装",
+        "family_id": "51d4155c2d663856e27a",
+        "selection_reason": "offline difficulty/strategy diversity candidate; requires online rollout probe before frontier promotion",
+        "selection_strategy": "multi_option",
+        "task_id": 10515
+      },
+      "removed_task_id": 10515
+    }
+  ],
+  "retained_from_v1": 86,
+  "schema": "shopping-grpo-dev-probe-manifest-v1.1",
+  "seed": "benchmark-v2.2-hard-data-repair-20260810",
+  "selected_count": 100,
+  "selection_kind": "offline_dev_probe_candidates_not_online_frontier",
+  "source": {
+    "path": "environments\\ShopSimulator\\shop_env\\data\\items_eval_train.json",
+    "sha256": "57b10950a0064d16c81535a1d764a75879a508d250dde8a2a1787c5e6045559f"
+  },
+  "strategy_distribution": {
+    "evidence_verification": 20,
+    "focused_verification": 20,
+    "multi_option": 21,
+    "price_semantics": 13,
+    "search_reformulation": 26
+  },
+  "validation": {
+    "final_v2_2_task_overlap": 0,
+    "full_record_count_matches": true,
+    "hard_data_gate_failures": 0,
+    "internal_duplicate_families": 0,
+    "task_count": 100,
+    "training_task_overlap": 0,
+    "unique_task_ids": 100
+  }
+}

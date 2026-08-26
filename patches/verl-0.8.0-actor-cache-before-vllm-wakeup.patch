@@ -1,0 +1,14 @@
+--- engine_workers.original.py
++++ engine_workers.patched.py
+@@ -699,6 +699,11 @@
+             await self.checkpoint_engine.send_weights(per_tensor_param, global_steps=global_steps)
+             return
+ 
++        # FSDP actor updates can leave reclaimable allocator blocks reserved. Release
++        # them in the actor Ray worker before vLLM restores its weight allocation.
++        # Clearing only in the driver process cannot affect this worker's CUDA pool.
++        aggressive_empty_cache(force_sync=True)  # SHOPPING_GRPO_ACTOR_CACHE_BEFORE_VLLM_WAKEUP_V1
++
+         set_expandable_segments(False)
+         log_gpu_memory_usage("Before resume weights", logger=logger)
+ 

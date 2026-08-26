@@ -1,0 +1,830 @@
+{
+  "added_task_ids": [
+    18,
+    349,
+    308,
+    203,
+    937,
+    56,
+    87,
+    961,
+    247,
+    1197,
+    366,
+    340,
+    579,
+    1000,
+    151,
+    488,
+    307,
+    920,
+    317,
+    243,
+    1413,
+    1375,
+    516
+  ],
+  "removed_task_ids": [
+    26,
+    51,
+    123,
+    196,
+    251,
+    362,
+    440,
+    536,
+    704,
+    706,
+    779,
+    791,
+    802,
+    837,
+    845,
+    849,
+    1103,
+    1159,
+    1177,
+    1254,
+    1336,
+    1366,
+    1438
+  ],
+  "replacements": [
+    {
+      "added_task_id": 18,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.8375,
+        "domain": "服饰鞋包饰品",
+        "family_id": "845ef108e36725952b02",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option",
+          "negation"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 18
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.989744,
+        "domain": "服饰鞋包饰品",
+        "family_id": "0dfecdd97581c366d245",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option",
+          "negation"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 1366
+      },
+      "removed_task_id": 1366
+    },
+    {
+      "added_task_id": 349,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.860509,
+        "domain": "服饰鞋包饰品",
+        "family_id": "f5c0e73e7af575097c2a",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 349
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.972515,
+        "domain": "服饰鞋包饰品",
+        "family_id": "ac067cd345b97a3a9fd7",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 26
+      },
+      "removed_task_id": 26
+    },
+    {
+      "added_task_id": 308,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.744444,
+        "domain": "休闲娱乐文教",
+        "family_id": "005f34c79dbd50dba52d",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 3,
+        "suite": "core",
+        "task_id": 308
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.261111,
+        "domain": "休闲娱乐文教",
+        "family_id": "794dbe56afbd0665a8bf",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "core",
+        "task_id": 1254
+      },
+      "removed_task_id": 1254
+    },
+    {
+      "added_task_id": 203,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.333333,
+        "domain": "家用电器数码",
+        "family_id": "15f45fcc1724cf290d96",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 203
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.235057,
+        "domain": "家用电器数码",
+        "family_id": "a2877ec94df04a434e56",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 1103
+      },
+      "removed_task_id": 1103
+    },
+    {
+      "added_task_id": 937,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.284028,
+        "domain": "家用电器数码",
+        "family_id": "1ced0d40df5b65c2e9a9",
+        "feature_tags": [
+          "approximate_price"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 937
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.989116,
+        "domain": "家用电器数码",
+        "family_id": "efbd0fee33d876436486",
+        "feature_tags": [
+          "approximate_price"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 1159
+      },
+      "removed_task_id": 1159
+    },
+    {
+      "added_task_id": 56,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "under_10",
+        "difficulty_score": 9.306302,
+        "domain": "食品饮品",
+        "family_id": "925de80f08b51921e9d1",
+        "feature_tags": [
+          "approximate_price"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 56
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "under_10",
+        "difficulty_score": 9.429739,
+        "domain": "食品饮品",
+        "family_id": "53865b58561445ea4aa5",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "core",
+        "task_id": 802
+      },
+      "removed_task_id": 802
+    },
+    {
+      "added_task_id": 87,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.583333,
+        "domain": "母婴儿童",
+        "family_id": "671b1e85ddd73eac36ae",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank21_150",
+        "retrieval_rank": 83,
+        "suite": "core",
+        "task_id": 87
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.033333,
+        "domain": "母婴儿童",
+        "family_id": "1a6a7e9cfc6bef4108ac",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank21_150",
+        "retrieval_rank": 36,
+        "suite": "core",
+        "task_id": 791
+      },
+      "removed_task_id": 791
+    },
+    {
+      "added_task_id": 961,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 16.364617,
+        "domain": "母婴儿童",
+        "family_id": "5d39845a0b61440e5745",
+        "feature_tags": [
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "core",
+        "task_id": 961
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 15.166667,
+        "domain": "母婴儿童",
+        "family_id": "a670cea8f601cfb1f148",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "core",
+        "task_id": 704
+      },
+      "removed_task_id": 704
+    },
+    {
+      "added_task_id": 247,
+      "new_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.726757,
+        "domain": "休闲娱乐文教",
+        "family_id": "fd8b633f09f3597e7c2a",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "challenge",
+        "task_id": 247
+      },
+      "old_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.317849,
+        "domain": "休闲娱乐文教",
+        "family_id": "439030865e244c48d83f",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "challenge",
+        "task_id": 536
+      },
+      "removed_task_id": 536
+    },
+    {
+      "added_task_id": 1197,
+      "new_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.087626,
+        "domain": "母婴儿童",
+        "family_id": "0d7fa9c4699659fcc3b7",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 1197
+      },
+      "old_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.457018,
+        "domain": "母婴儿童",
+        "family_id": "e23d0829dbbf5464ddc7",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 362
+      },
+      "removed_task_id": 362
+    },
+    {
+      "added_task_id": 366,
+      "new_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.190577,
+        "domain": "服饰鞋包饰品",
+        "family_id": "e78aaf410cfba028d298",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 366
+      },
+      "old_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.544444,
+        "domain": "服饰鞋包饰品",
+        "family_id": "df7ab14e431679691b70",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 1336
+      },
+      "removed_task_id": 1336
+    },
+    {
+      "added_task_id": 340,
+      "new_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.194444,
+        "domain": "美妆个护健康",
+        "family_id": "fb97a54e28b164924a00",
+        "feature_tags": [],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 4,
+        "suite": "challenge",
+        "task_id": 340
+      },
+      "old_slice": {
+        "challenge_slice": "search_reformulation",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.094444,
+        "domain": "美妆个护健康",
+        "family_id": "9fec44d2c859da7af52f",
+        "feature_tags": [],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 3,
+        "suite": "challenge",
+        "task_id": 123
+      },
+      "removed_task_id": 123
+    },
+    {
+      "added_task_id": 579,
+      "new_slice": {
+        "challenge_slice": "candidate_comparison",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.913235,
+        "domain": "生产材料农用品",
+        "family_id": "6350b8adb86b5a5b0259",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 579
+      },
+      "old_slice": {
+        "challenge_slice": "candidate_comparison",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.105556,
+        "domain": "生产材料农用品",
+        "family_id": "b88469eb10829b946d55",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 849
+      },
+      "removed_task_id": 849
+    },
+    {
+      "added_task_id": 1000,
+      "new_slice": {
+        "challenge_slice": "candidate_comparison",
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 16.247368,
+        "domain": "家居家装",
+        "family_id": "df890a4158fdbe5980fb",
+        "feature_tags": [
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 1000
+      },
+      "old_slice": {
+        "challenge_slice": "candidate_comparison",
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 15.06092,
+        "domain": "家居家装",
+        "family_id": "4f3c0e2d9b8949b3af52",
+        "feature_tags": [
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 837
+      },
+      "removed_task_id": 837
+    },
+    {
+      "added_task_id": 151,
+      "new_slice": {
+        "challenge_slice": "price_semantics",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.542264,
+        "domain": "休闲娱乐文教",
+        "family_id": "ec4e0cdd5b31f676e5d5",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 151
+      },
+      "old_slice": {
+        "challenge_slice": "price_semantics",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.846581,
+        "domain": "休闲娱乐文教",
+        "family_id": "aa6013d3dd23e4769b64",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 845
+      },
+      "removed_task_id": 845
+    },
+    {
+      "added_task_id": 488,
+      "new_slice": {
+        "challenge_slice": "price_semantics",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.891288,
+        "domain": "家用电器数码",
+        "family_id": "ba8e755a6deb3723c2e1",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 488
+      },
+      "old_slice": {
+        "challenge_slice": "price_semantics",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.251852,
+        "domain": "家用电器数码",
+        "family_id": "d44f3215b6ecd3587e21",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 51
+      },
+      "removed_task_id": 51
+    },
+    {
+      "added_task_id": 307,
+      "new_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 12.930065,
+        "domain": "母婴儿童",
+        "family_id": "13816e0dc6167115a946",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 307
+      },
+      "old_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.166667,
+        "domain": "母婴儿童",
+        "family_id": "998b2e163cca168dec88",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 196
+      },
+      "removed_task_id": 196
+    },
+    {
+      "added_task_id": 920,
+      "new_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.932709,
+        "domain": "家用电器数码",
+        "family_id": "c66397b126b91ad1aca3",
+        "feature_tags": [
+          "approximate_price",
+          "compatibility",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 920
+      },
+      "old_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.788194,
+        "domain": "家用电器数码",
+        "family_id": "8ff8bea53fcaaabc2cf8",
+        "feature_tags": [
+          "compatibility",
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 440
+      },
+      "removed_task_id": 440
+    },
+    {
+      "added_task_id": 317,
+      "new_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.783333,
+        "domain": "服饰鞋包饰品",
+        "family_id": "341797264df4e49ec234",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank6_20",
+        "retrieval_rank": 13,
+        "suite": "challenge",
+        "task_id": 317
+      },
+      "old_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 14.157296,
+        "domain": "服饰鞋包饰品",
+        "family_id": "0b802941ec86b631a30e",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank6_20",
+        "retrieval_rank": 16,
+        "suite": "challenge",
+        "task_id": 779
+      },
+      "removed_task_id": 779
+    },
+    {
+      "added_task_id": 243,
+      "new_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 17.1,
+        "domain": "休闲娱乐文教",
+        "family_id": "785a35dab283ad45306f",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank6_20",
+        "retrieval_rank": 12,
+        "suite": "challenge",
+        "task_id": 243
+      },
+      "old_slice": {
+        "challenge_slice": "multi_option",
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 15.366667,
+        "domain": "休闲娱乐文教",
+        "family_id": "5bcd621642560c1d175e",
+        "feature_tags": [
+          "approximate_price",
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank6_20",
+        "retrieval_rank": 14,
+        "suite": "challenge",
+        "task_id": 706
+      },
+      "removed_task_id": 706
+    },
+    {
+      "added_task_id": 1413,
+      "new_slice": {
+        "challenge_slice": "long_horizon",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.993508,
+        "domain": "家用电器数码",
+        "family_id": "039ec63ff39484e33281",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 1413
+      },
+      "old_slice": {
+        "challenge_slice": "long_horizon",
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 13.187908,
+        "domain": "家用电器数码",
+        "family_id": "d1123caaaf42a3222d4f",
+        "feature_tags": [
+          "approximate_price",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank1",
+        "retrieval_rank": 1,
+        "suite": "challenge",
+        "task_id": 1438
+      },
+      "removed_task_id": 1438
+    },
+    {
+      "added_task_id": 1375,
+      "new_slice": {
+        "challenge_slice": "long_horizon",
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 16.883333,
+        "domain": "家居家装",
+        "family_id": "ad08051e0dd1650fca0c",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank21_150",
+        "retrieval_rank": 35,
+        "suite": "challenge",
+        "task_id": 1375
+      },
+      "old_slice": {
+        "challenge_slice": "long_horizon",
+        "difficulty_bucket": "15_18",
+        "difficulty_score": 16.269591,
+        "domain": "家居家装",
+        "family_id": "5be1e23fdae9de3b9fd0",
+        "feature_tags": [
+          "hard_budget",
+          "multi_option"
+        ],
+        "retrieval_bucket": "rank21_150",
+        "retrieval_rank": 21,
+        "suite": "challenge",
+        "task_id": 251
+      },
+      "removed_task_id": 251
+    },
+    {
+      "added_task_id": 516,
+      "new_slice": {
+        "challenge_slice": "long_horizon",
+        "difficulty_bucket": "18_plus",
+        "difficulty_score": 19.038889,
+        "domain": "服饰鞋包饰品",
+        "family_id": "8b86f620a61105de9d02",
+        "feature_tags": [
+          "hard_budget"
+        ],
+        "retrieval_bucket": "missing",
+        "retrieval_rank": null,
+        "suite": "challenge",
+        "task_id": 516
+      },
+      "old_slice": {
+        "challenge_slice": "long_horizon",
+        "difficulty_bucket": "18_plus",
+        "difficulty_score": 18.544444,
+        "domain": "服饰鞋包饰品",
+        "family_id": "f3cb126b593f2864c9bf",
+        "feature_tags": [
+          "multi_option"
+        ],
+        "retrieval_bucket": "missing",
+        "retrieval_rank": null,
+        "suite": "challenge",
+        "task_id": 1177
+      },
+      "removed_task_id": 1177
+    }
+  ],
+  "retained_count": 217,
+  "schema": "shopping-benchmark-replacement-v2.2",
+  "validation": {
+    "family_duplicates": 0,
+    "hard_data_gate_failures": 0,
+    "task_count": 240,
+    "training_task_overlap": 0,
+    "unique_task_ids": 240
+  }
+}

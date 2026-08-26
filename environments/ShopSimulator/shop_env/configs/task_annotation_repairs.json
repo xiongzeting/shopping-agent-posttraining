@@ -1,0 +1,91 @@
+{
+  "version": "task-annotation-repairs-v1",
+  "repairs": {
+    "2bbeab1c7930ba513d2cd370960b07565cd571c489d3096c2c7e460762dd8f72": {
+      "instruction_options": [
+        "灵雅系 酒红色"
+      ],
+      "query_verified_instruction_options": [
+        "灵雅系 酒红色"
+      ],
+      "reason": "Remove the unrelated hidden bulb-size option; the query only specifies burgundy."
+    },
+    "7d1e6c4fdb05fe7b28cff45fe29f9009491be297d8e1141143add16f83d81959": {
+      "instruction_options": [
+        "40g",
+        "正常规格"
+      ],
+      "query_verified_instruction_options": [
+        "40g",
+        "正常规格"
+      ],
+      "reason": "The public query requires at least 40 grams, while the original annotation used 40 ml."
+    },
+    "348cb83200b330abfee53815c60d5f78d43f464ec85faee9002fee7293f99716": {
+      "instruction_options": [
+        "铠甲勇士+头盔护具包",
+        "适合平时穿鞋25-30"
+      ],
+      "query_verified_instruction_options": [
+        "铠甲勇士+头盔护具包",
+        "适合平时穿鞋25-30"
+      ],
+      "reason": "The public query explicitly asks for Armor Hero, not Ultraman."
+    },
+    "edb34a2556054b8671d140eba1ebf5363d151a74e073c055edbdd264dd954c30": {
+      "attributes": [],
+      "instruction_options": [],
+      "reason": "The target product is a 400 ml lees brine while the query asks for about 22 litres of dark soy sauce; this task is invalid and must be excluded by the benchmark data gate."
+    },
+    "92183230314afe7fdadb488c1343cbf067bcba93b760b73f7e7eae7491e279ba": {
+      "instruction_options": [
+        "纯色月球柱头灯15cm【接电款】"
+      ],
+      "query_verified_instruction_options": [
+        "纯色月球柱头灯15cm【接电款】"
+      ],
+      "reason": "The public query explicitly requires a wired lamp, not the solar variant."
+    },
+    "65dd09654e711dad5440f0db6345d0bd05263f3988092f53016b29222325ee81": {
+      "attributes": [
+        "粉底液",
+        "美白",
+        "遮瑕",
+        "持久",
+        "不脱妆",
+        "混合油干皮",
+        "粉扑",
+        "官方正品"
+      ],
+      "reason": "The query compares the desired foundation with cushion and BB-cream benefits; it does not require the alternative product itself to be a cushion or BB cream."
+    },
+    "35bc829da43259c99332aaacc2a07388ff9d58d7c029a9a2850166fa9a94e9b1": {
+      "attributes": [
+        "智能语音",
+        "出门提醒器",
+        "家用",
+        "钥匙",
+        "关煤气"
+      ],
+      "reason": "The elderly family member is the recipient context; the product requirement is the visible reminder capability."
+    },
+    "e98b4327c231d0069a5dbd7e7c5bd6d844131c29ec0b80efe137f3d014b4a652": {
+      "attributes": [
+        "防水",
+        "不晕染",
+        "打底定型液",
+        "官方正品",
+        "旗舰店"
+      ],
+      "reason": "The word female describes the user's eyelashes rather than a separately verifiable mascara capability."
+    },
+    "86baf9b39cdd184f7d3454574d7ee4297a943c7f2a6218b6a6b9aadad5c14665": {
+      "attributes": [
+        "耐磨",
+        "防滑",
+        "男女"
+      ],
+      "reason": "Competitions and training are narrative motivation; the explicit product requirements are wear resistance, anti-slip performance, and unisex suitability."
+    }
+  }
+}

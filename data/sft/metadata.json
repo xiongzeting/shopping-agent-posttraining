@@ -1,0 +1,101 @@
+{
+  "all": {
+    "path": "data/sft/all.jsonl",
+    "rows": 1000,
+    "sha256": "a4a8919dd6c51e72cb1bfaac08b0d048ccf523bf6c521d5bc9a3833df8e7750e"
+  },
+  "canonical_eligibility": "ready_for_gpu_runtime_preflight",
+  "contract": "environment-v2.4/reward-v3.2/sft-v3",
+  "data_gate": {
+    "path": "data_gate.json",
+    "schema_version": "shopping-teacher-data-gate-v1",
+    "sha256": "83ffb34fd907cb4447d68379d4e6f19cb355e2d612cd8c3c852ae3f467fea3d2",
+    "status": "passed"
+  },
+  "distribution": {
+    "coverage": {
+      "candidate_comparison": 474,
+      "clean_critical_actions": 1000,
+      "evidence_verification": 932,
+      "explicit_terminal_buy": 1000,
+      "guard_recovery": 501,
+      "long": 123,
+      "loop_recovery": 596,
+      "medium_or_long": 523,
+      "multiple_options": 410,
+      "search_reformulation": 596,
+      "variant_selection": 1000
+    },
+    "retrieval_rank": {
+      "missing": 30,
+      "rank1": 501,
+      "rank21_150": 70,
+      "rank2_5": 299,
+      "rank6_20": 100
+    },
+    "steps": {
+      "long": 123,
+      "medium": 400,
+      "short": 477
+    },
+    "teacher_strategy": {
+      "loop_recovery": 160,
+      "near_miss_rejection": 101,
+      "option_grounding": 99,
+      "stable": 600,
+      "terminal_tool_commit": 40
+    },
+    "top5_sequence_share": 0.195,
+    "top_sequence_share": 0.075,
+    "unique_action_sequences": 452
+  },
+  "environment": "shopsimulator-environment-v2.4",
+  "final_240_asin_overlap": 0,
+  "final_240_family_overlap": 0,
+  "final_240_overlap": 0,
+  "final_240_semantic_overlap": 0,
+  "observation": "shopping-observation-v2",
+  "reward": "shopsimulator-reward-v3.2",
+  "schema_version": "shopping-sft-dataset-v3",
+  "source_collection": {
+    "accepted_rows": 1000,
+    "accepted_sha256": "378013acbd3d68924ab3d78a8bf4ef69ce4656c2b8c40efa919636ff93b68eea",
+    "max_steps": 45,
+    "raw_rows": 1000,
+    "rejected_rows": 0,
+    "schema_version": "shopping-sft-collection-v3",
+    "selected_corrective": 400,
+    "selected_stable": 600,
+    "sft_sha256": "a4a8919dd6c51e72cb1bfaac08b0d048ccf523bf6c521d5bc9a3833df8e7750e",
+    "source": "outputs/teacher-v3.2/final1000-convergence-v4-20260809/final1000-materialized-v5-final30k-20260809",
+    "teacher_model": "deepseek-v4-flash",
+    "teacher_prompt": "shopping-teacher-prompt-v4-convergence-repair"
+  },
+  "split_method": "task_id",
+  "split_seed": 20260809,
+  "status": "current",
+  "teacher_selection": "shopping-teacher-recoverable-process-v4",
+  "termination": "shopping-termination-v3.1",
+  "token_audit": {
+    "expected_optimizer_steps": 339,
+    "max_length": 30000,
+    "path": "token_audit.json",
+    "sha256": "df4f2caca856748bafb93e2816ec93ce9d53a3a04f4d111ad83599604776dda7",
+    "status": "passed",
+    "train_kept": 900,
+    "validation_kept": 100
+  },
+  "tool_schema": "shopping-tools-v2",
+  "train": {
+    "path": "data/sft/train.jsonl",
+    "rows": 900,
+    "sha256": "f11c5507caef84aadcdb08eecbe37ccda06fb2ec6ff93737e374938b502cfeaf"
+  },
+  "train_validation_overlap": 0,
+  "validation": {
+    "path": "data/sft/validation.jsonl",
+    "rows": 100,
+    "sha256": "e36cda3671587896c77bfed55dde9cf2740353aac9fe5819a543f68e84a30649"
+  },
+  "validation_ratio": 0.1
+}

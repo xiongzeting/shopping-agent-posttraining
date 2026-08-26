@@ -1,0 +1,12 @@
+# Thirty-step GRPO probe recipe.  The base recipe remains the source of all
+# rollout, memory, dynamic-sampling, and reward settings.
+hydra:
+  searchpath:
+    - pkg://verl/trainer/config
+defaults:
+  - grpo
+  - _self_
+
+trainer:
+  total_training_steps: 30
+  test_freq: 10

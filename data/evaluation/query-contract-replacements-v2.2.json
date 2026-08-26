@@ -1,0 +1,47 @@
+{
+  "replacements": [
+    {
+      "added_task_id": 419,
+      "new_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.466319,
+        "domain": "食品饮品",
+        "family_id": "7fed3114e1cd01c75928",
+        "feature_tags": [
+          "approximate_price",
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 3,
+        "suite": "core",
+        "task_id": 419
+      },
+      "old_slice": {
+        "challenge_slice": null,
+        "difficulty_bucket": "10_15",
+        "difficulty_score": 11.694444,
+        "domain": "食品饮品",
+        "family_id": "cf957c4e0dfbe9583a98",
+        "feature_tags": [
+          "approximate_price",
+          "hard_budget"
+        ],
+        "retrieval_bucket": "rank2_5",
+        "retrieval_rank": 2,
+        "suite": "core",
+        "task_id": 405
+      },
+      "reason": "query_inconsistent_gold_annotation",
+      "removed_task_id": 405
+    }
+  ],
+  "schema": "shopping-benchmark-query-contract-repair-v1",
+  "seed": "benchmark-v2.2-query-contract-repair-20260812",
+  "validation": {
+    "family_duplicates": 0,
+    "task_count": 240,
+    "training_task_overlap": 0,
+    "unique_task_ids": 240
+  }
+}
