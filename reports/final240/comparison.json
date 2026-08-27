@@ -760,10 +760,10 @@
       "both_completed_tasks": 240,
       "reward_and_terminal": {
         "strict_success_transitions": {
-          "failure_to_failure": 71,
-          "failure_to_success": 32,
-          "success_to_failure": 20,
-          "success_to_success": 117
+          "failure_to_failure": 65,
+          "failure_to_success": 33,
+          "success_to_failure": 22,
+          "success_to_success": 120
         },
         "reward_type_transitions": {
           "assistant_final -> max_steps": 2,
@@ -802,6 +802,12 @@
           "wrong_purchase -> partial_alternative_purchase": 3,
           "wrong_purchase -> repeat_loop": 3,
           "wrong_purchase -> wrong_purchase": 3
+        },
+        "purchase_success_transitions": {
+          "failure_to_failure": 42,
+          "failure_to_success": 34,
+          "success_to_failure": 25,
+          "success_to_success": 139
         }
       },
       "requirement_rubric": {
@@ -901,10 +907,10 @@
       "both_completed_tasks": 240,
       "reward_and_terminal": {
         "strict_success_transitions": {
-          "failure_to_failure": 56,
-          "failure_to_success": 42,
-          "success_to_failure": 21,
-          "success_to_success": 121
+          "failure_to_failure": 60,
+          "failure_to_success": 43,
+          "success_to_failure": 20,
+          "success_to_success": 117
         },
         "reward_type_transitions": {
           "assistant_final -> partial_alternative_purchase": 1,
@@ -936,12 +942,6 @@
           "wrong_purchase -> repeat_loop": 2,
           "wrong_purchase -> unknown": 1,
           "wrong_purchase -> valid_alternative_purchase": 2
-        },
-        "purchase_success_transitions": {
-          "failure_to_failure": 37,
-          "failure_to_success": 39,
-          "success_to_failure": 23,
-          "success_to_success": 141
         }
       },
       "requirement_rubric": {
@@ -1443,10 +1443,10 @@
       "both_completed_tasks": 240,
       "reward_and_terminal": {
         "strict_success_transitions": {
-          "failure_to_failure": 55,
-          "failure_to_success": 36,
-          "success_to_failure": 25,
-          "success_to_success": 124
+          "failure_to_failure": 53,
+          "failure_to_success": 34,
+          "success_to_failure": 24,
+          "success_to_success": 129
         },
         "reward_type_transitions": {
           "assistant_final -> gold_purchase": 4,
@@ -1477,6 +1477,12 @@
           "wrong_purchase -> partial_alternative_purchase": 4,
           "wrong_purchase -> repeat_loop": 2,
           "wrong_purchase -> valid_alternative_purchase": 3
+        },
+        "purchase_success_transitions": {
+          "failure_to_failure": 35,
+          "failure_to_success": 32,
+          "success_to_failure": 25,
+          "success_to_success": 148
         }
       },
       "requirement_rubric": {
@@ -2106,9 +2112,9 @@
       "reward_and_terminal": {
         "strict_success_transitions": {
           "failure_to_failure": 39,
-          "failure_to_success": 41,
+          "failure_to_success": 38,
           "success_to_failure": 25,
-          "success_to_success": 135
+          "success_to_success": 138
         },
         "reward_type_transitions": {
           "gold_purchase -> gold_purchase": 135,
@@ -2131,6 +2137,12 @@
           "unknown -> gold_purchase": 3,
           "valid_alternative_purchase -> gold_purchase": 7,
           "valid_alternative_purchase -> valid_alternative_purchase": 7
+        },
+        "purchase_success_transitions": {
+          "failure_to_failure": 26,
+          "failure_to_success": 34,
+          "success_to_failure": 19,
+          "success_to_success": 161
         }
       },
       "requirement_rubric": {

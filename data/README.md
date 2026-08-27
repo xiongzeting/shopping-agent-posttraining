@@ -5,7 +5,7 @@
 | Environment | `environment.json` | Environment v2.4 |
 | SFT | `sft/` | canonical v5，1000条 |
 | GRPO | `grpo/` | 尚未构建 |
-| Evaluation | `evaluation/` | Final-240 已冻结，未执行 |
+| Evaluation | `evaluation/` | Final-240 已冻结；聚合结果与派生审计见 `reports/final240/` |
 
 ## SFT
 

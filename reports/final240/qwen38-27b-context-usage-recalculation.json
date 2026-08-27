@@ -1,0 +1,1934 @@
+{
+  "schema_version": "shopping-context-usage-recalculation-v1",
+  "source": "outputs\\evaluation\\final240-v24-qwen38-27b-base-step230-config-nonthinking-r1-20260823\\trajectories.jsonl",
+  "method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
+  "tasks": 240,
+  "corrected": {
+    "p50": 0.18582869080779946,
+    "p95": 0.41804491643454034,
+    "max": 0.9915738161559888,
+    "tasks_over_budget": 0
+  },
+  "records": [
+    {
+      "task_id": 10,
+      "provider_call_count": 10,
+      "max_provider_prompt_tokens": 15140,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.5271587743732591,
+      "previous_local_estimate_ratio": 1.0377785515320335
+    },
+    {
+      "task_id": 18,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6233,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.21702646239554318,
+      "previous_local_estimate_ratio": 0.20358635097493036
+    },
+    {
+      "task_id": 47,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6041,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.21034122562674096,
+      "previous_local_estimate_ratio": 0.1339484679665738
+    },
+    {
+      "task_id": 56,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5395,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18784818941504178,
+      "previous_local_estimate_ratio": 0.4738509749303621
+    },
+    {
+      "task_id": 75,
+      "provider_call_count": 13,
+      "max_provider_prompt_tokens": 12125,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.42217966573816157,
+      "previous_local_estimate_ratio": 0.6788300835654596
+    },
+    {
+      "task_id": 76,
+      "provider_call_count": 12,
+      "max_provider_prompt_tokens": 9994,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.34798050139275766,
+      "previous_local_estimate_ratio": 0.3886142061281337
+    },
+    {
+      "task_id": 85,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 7215,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2512186629526462,
+      "previous_local_estimate_ratio": 0.1746518105849582
+    },
+    {
+      "task_id": 87,
+      "provider_call_count": 11,
+      "max_provider_prompt_tokens": 13779,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.47977019498607243,
+      "previous_local_estimate_ratio": 0.9915738161559888
+    },
+    {
+      "task_id": 89,
+      "provider_call_count": 14,
+      "max_provider_prompt_tokens": 12229,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.4258008356545961,
+      "previous_local_estimate_ratio": 0.8594707520891365
+    },
+    {
+      "task_id": 104,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4439,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15456128133704736,
+      "previous_local_estimate_ratio": 0.24192200557103063
+    },
+    {
+      "task_id": 111,
+      "provider_call_count": 6,
+      "max_provider_prompt_tokens": 6742,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2347493036211699,
+      "previous_local_estimate_ratio": 0.4083217270194986
+    },
+    {
+      "task_id": 122,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4631,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16124651810584958,
+      "previous_local_estimate_ratio": 0.15473537604456825
+    },
+    {
+      "task_id": 126,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4612,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1605849582172702,
+      "previous_local_estimate_ratio": 0.3189066852367688
+    },
+    {
+      "task_id": 128,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4519,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1573467966573816,
+      "previous_local_estimate_ratio": 0.26918523676880224
+    },
+    {
+      "task_id": 132,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5453,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18986768802228413,
+      "previous_local_estimate_ratio": 0.18408774373259054
+    },
+    {
+      "task_id": 138,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5028,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17506963788300836,
+      "previous_local_estimate_ratio": 0.17350278551532033
+    },
+    {
+      "task_id": 140,
+      "provider_call_count": 14,
+      "max_provider_prompt_tokens": 11389,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.39655292479108634,
+      "previous_local_estimate_ratio": 0.3978760445682451
+    },
+    {
+      "task_id": 141,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4929,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1716225626740947,
+      "previous_local_estimate_ratio": 0.38673398328690806
+    },
+    {
+      "task_id": 147,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4549,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15839136490250696,
+      "previous_local_estimate_ratio": 0.1716225626740947
+    },
+    {
+      "task_id": 151,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6130,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2134401114206128,
+      "previous_local_estimate_ratio": 0.3488857938718663
+    },
+    {
+      "task_id": 154,
+      "provider_call_count": 9,
+      "max_provider_prompt_tokens": 6866,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.23906685236768802,
+      "previous_local_estimate_ratio": 0.26155988857938717
+    },
+    {
+      "task_id": 159,
+      "provider_call_count": 12,
+      "max_provider_prompt_tokens": 12985,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.4521239554317549,
+      "previous_local_estimate_ratio": 0.2724233983286908
+    },
+    {
+      "task_id": 160,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6990,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.24338440111420612,
+      "previous_local_estimate_ratio": 0.37809888579387185
+    },
+    {
+      "task_id": 173,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5751,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20024373259052924,
+      "previous_local_estimate_ratio": 0.4584610027855153
+    },
+    {
+      "task_id": 176,
+      "provider_call_count": 7,
+      "max_provider_prompt_tokens": 6414,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22332869080779943,
+      "previous_local_estimate_ratio": 0.26803621169916436
+    },
+    {
+      "task_id": 179,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 9891,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.3443941504178273,
+      "previous_local_estimate_ratio": 0.3500348189415042
+    },
+    {
+      "task_id": 191,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5716,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.199025069637883,
+      "previous_local_estimate_ratio": 0.37346796657381615
+    },
+    {
+      "task_id": 198,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5057,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17607938718662952,
+      "previous_local_estimate_ratio": 0.6159818941504178
+    },
+    {
+      "task_id": 203,
+      "provider_call_count": 24,
+      "max_provider_prompt_tokens": 28478,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.9915738161559888,
+      "previous_local_estimate_ratio": 0.4264623955431755
+    },
+    {
+      "task_id": 205,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 7001,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2437674094707521,
+      "previous_local_estimate_ratio": 0.3443941504178273
+    },
+    {
+      "task_id": 215,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4376,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15236768802228412,
+      "previous_local_estimate_ratio": 0.508600278551532
+    },
+    {
+      "task_id": 219,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 7206,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.25090529247910864,
+      "previous_local_estimate_ratio": 0.3043175487465181
+    },
+    {
+      "task_id": 231,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5123,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1783774373259053,
+      "previous_local_estimate_ratio": 0.31002785515320336
+    },
+    {
+      "task_id": 237,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5644,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19651810584958218,
+      "previous_local_estimate_ratio": 0.2028899721448468
+    },
+    {
+      "task_id": 243,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 7636,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2658774373259053,
+      "previous_local_estimate_ratio": 0.2849233983286908
+    },
+    {
+      "task_id": 247,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 7155,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.24912952646239556,
+      "previous_local_estimate_ratio": 0.23906685236768802
+    },
+    {
+      "task_id": 253,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5880,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20473537604456823,
+      "previous_local_estimate_ratio": 0.17116991643454038
+    },
+    {
+      "task_id": 257,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5135,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17879526462395542,
+      "previous_local_estimate_ratio": 0.16956824512534818
+    },
+    {
+      "task_id": 261,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5155,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.179491643454039,
+      "previous_local_estimate_ratio": 0.23130222841225626
+    },
+    {
+      "task_id": 264,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 7820,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2722841225626741,
+      "previous_local_estimate_ratio": 0.2660863509749304
+    },
+    {
+      "task_id": 266,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4971,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17308495821727019,
+      "previous_local_estimate_ratio": 0.31399721448467965
+    },
+    {
+      "task_id": 292,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5016,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1746518105849582,
+      "previous_local_estimate_ratio": 0.17298050139275767
+    },
+    {
+      "task_id": 304,
+      "provider_call_count": 9,
+      "max_provider_prompt_tokens": 8502,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2960306406685237,
+      "previous_local_estimate_ratio": 0.3406685236768802
+    },
+    {
+      "task_id": 307,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6687,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2328342618384401,
+      "previous_local_estimate_ratio": 0.20024373259052924
+    },
+    {
+      "task_id": 308,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5768,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20083565459610028,
+      "previous_local_estimate_ratio": 0.5755919220055711
+    },
+    {
+      "task_id": 309,
+      "provider_call_count": 3,
+      "max_provider_prompt_tokens": 5342,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18600278551532035,
+      "previous_local_estimate_ratio": 0.20191504178272981
+    },
+    {
+      "task_id": 312,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6186,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2153899721448468,
+      "previous_local_estimate_ratio": 0.20243732590529248
+    },
+    {
+      "task_id": 317,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5827,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2028899721448468,
+      "previous_local_estimate_ratio": 0.18161559888579387
+    },
+    {
+      "task_id": 318,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 6240,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.21727019498607242,
+      "previous_local_estimate_ratio": 0.2722841225626741
+    },
+    {
+      "task_id": 332,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4554,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15856545961002785,
+      "previous_local_estimate_ratio": 0.2911908077994429
+    },
+    {
+      "task_id": 333,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6075,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.211525069637883,
+      "previous_local_estimate_ratio": 0.15797353760445682
+    },
+    {
+      "task_id": 336,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4846,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1687325905292479,
+      "previous_local_estimate_ratio": 0.3406685236768802
+    },
+    {
+      "task_id": 340,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4604,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16030640668523677,
+      "previous_local_estimate_ratio": 0.5271587743732591
+    },
+    {
+      "task_id": 349,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5645,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19655292479108635,
+      "previous_local_estimate_ratio": 0.14623955431754876
+    },
+    {
+      "task_id": 351,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4834,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16831476323119776,
+      "previous_local_estimate_ratio": 0.1649025069637883
+    },
+    {
+      "task_id": 357,
+      "provider_call_count": 10,
+      "max_provider_prompt_tokens": 9423,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.32809888579387186,
+      "previous_local_estimate_ratio": 0.2660863509749304
+    },
+    {
+      "task_id": 363,
+      "provider_call_count": 21,
+      "max_provider_prompt_tokens": 23028,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.8018105849582172,
+      "previous_local_estimate_ratio": 0.30985376044568247
+    },
+    {
+      "task_id": 365,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5600,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19498607242339833,
+      "previous_local_estimate_ratio": 0.20191504178272981
+    },
+    {
+      "task_id": 366,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5331,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18561977715877437,
+      "previous_local_estimate_ratio": 0.22715877437325904
+    },
+    {
+      "task_id": 369,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4819,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1677924791086351,
+      "previous_local_estimate_ratio": 0.16963788300835655
+    },
+    {
+      "task_id": 374,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5131,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1786559888579387,
+      "previous_local_estimate_ratio": 0.1842966573816156
+    },
+    {
+      "task_id": 375,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5656,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1969359331476323,
+      "previous_local_estimate_ratio": 0.5363509749303621
+    },
+    {
+      "task_id": 386,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5283,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18394846796657383,
+      "previous_local_estimate_ratio": 0.23561977715877438
+    },
+    {
+      "task_id": 391,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5641,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19641364902506964,
+      "previous_local_estimate_ratio": 0.17026462395543177
+    },
+    {
+      "task_id": 406,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4358,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1517409470752089,
+      "previous_local_estimate_ratio": 0.8018105849582172
+    },
+    {
+      "task_id": 407,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4538,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15800835654596102,
+      "previous_local_estimate_ratio": 0.1756615598885794
+    },
+    {
+      "task_id": 409,
+      "provider_call_count": 9,
+      "max_provider_prompt_tokens": 7865,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2738509749303621,
+      "previous_local_estimate_ratio": 0.211525069637883
+    },
+    {
+      "task_id": 412,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4907,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17085654596100278,
+      "previous_local_estimate_ratio": 0.21727019498607242
+    },
+    {
+      "task_id": 419,
+      "provider_call_count": 7,
+      "max_provider_prompt_tokens": 5824,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20278551532033426,
+      "previous_local_estimate_ratio": 0.32907381615598885
+    },
+    {
+      "task_id": 420,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5652,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1967966573816156,
+      "previous_local_estimate_ratio": 0.20191504178272981
+    },
+    {
+      "task_id": 422,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 7857,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2735724233983287,
+      "previous_local_estimate_ratio": 0.4738509749303621
+    },
+    {
+      "task_id": 431,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5251,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18283426183844012,
+      "previous_local_estimate_ratio": 0.29209610027855154
+    },
+    {
+      "task_id": 442,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4857,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16911559888579386,
+      "previous_local_estimate_ratio": 0.2174442896935933
+    },
+    {
+      "task_id": 443,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5123,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1783774373259053,
+      "previous_local_estimate_ratio": 0.19651810584958218
+    },
+    {
+      "task_id": 450,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6307,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.21960306406685237,
+      "previous_local_estimate_ratio": 0.18426183844011143
+    },
+    {
+      "task_id": 457,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4621,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1608983286908078,
+      "previous_local_estimate_ratio": 0.21469359331476323
+    },
+    {
+      "task_id": 459,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4501,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1567200557103064,
+      "previous_local_estimate_ratio": 0.23565459610027856
+    },
+    {
+      "task_id": 464,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4994,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17388579387186628,
+      "previous_local_estimate_ratio": 0.22959610027855154
+    },
+    {
+      "task_id": 466,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5371,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1870125348189415,
+      "previous_local_estimate_ratio": 0.7936281337047354
+    },
+    {
+      "task_id": 467,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5292,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18426183844011143,
+      "previous_local_estimate_ratio": 0.1814066852367688
+    },
+    {
+      "task_id": 488,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4431,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15428272980501392,
+      "previous_local_estimate_ratio": 0.1875
+    },
+    {
+      "task_id": 495,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4582,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15954038997214484,
+      "previous_local_estimate_ratio": 0.1716225626740947
+    },
+    {
+      "task_id": 499,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4769,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16605153203342618,
+      "previous_local_estimate_ratio": 0.24613509749303622
+    },
+    {
+      "task_id": 500,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5060,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17618384401114207,
+      "previous_local_estimate_ratio": 0.6523676880222842
+    },
+    {
+      "task_id": 503,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5231,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18213788300835654,
+      "previous_local_estimate_ratio": 0.17409470752089137
+    },
+    {
+      "task_id": 509,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4655,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16208217270194986,
+      "previous_local_estimate_ratio": 0.3043175487465181
+    },
+    {
+      "task_id": 516,
+      "provider_call_count": 7,
+      "max_provider_prompt_tokens": 8126,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.28293871866295267,
+      "previous_local_estimate_ratio": 0.32604456824512534
+    },
+    {
+      "task_id": 521,
+      "provider_call_count": 9,
+      "max_provider_prompt_tokens": 7904,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.27520891364902506,
+      "previous_local_estimate_ratio": 0.3920961002785515
+    },
+    {
+      "task_id": 523,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4869,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.169533426183844,
+      "previous_local_estimate_ratio": 0.16124651810584958
+    },
+    {
+      "task_id": 532,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4426,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15410863509749304,
+      "previous_local_estimate_ratio": 0.22855153203342618
+    },
+    {
+      "task_id": 549,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4572,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15919220055710306,
+      "previous_local_estimate_ratio": 0.20191504178272981
+    },
+    {
+      "task_id": 558,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4707,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16389275766016714,
+      "previous_local_estimate_ratio": 0.2988161559888579
+    },
+    {
+      "task_id": 568,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4783,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16653899721448467,
+      "previous_local_estimate_ratio": 0.23217270194986073
+    },
+    {
+      "task_id": 579,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4951,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17238857938718663,
+      "previous_local_estimate_ratio": 0.2108983286908078
+    },
+    {
+      "task_id": 604,
+      "provider_call_count": 12,
+      "max_provider_prompt_tokens": 27254,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.9489554317548746,
+      "previous_local_estimate_ratio": 0.4178272980501393
+    },
+    {
+      "task_id": 629,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4420,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15389972144846797,
+      "previous_local_estimate_ratio": 0.17778551532033426
+    },
+    {
+      "task_id": 631,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4497,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1565807799442897,
+      "previous_local_estimate_ratio": 0.1592618384401114
+    },
+    {
+      "task_id": 636,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4790,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16678272980501394,
+      "previous_local_estimate_ratio": 0.20358635097493036
+    },
+    {
+      "task_id": 638,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4366,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15201949860724234,
+      "previous_local_estimate_ratio": 0.2927924791086351
+    },
+    {
+      "task_id": 642,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6532,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22743732590529248,
+      "previous_local_estimate_ratio": 0.4584610027855153
+    },
+    {
+      "task_id": 644,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5301,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18457520891364904,
+      "previous_local_estimate_ratio": 0.18649025069637884
+    },
+    {
+      "task_id": 650,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4581,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15950557103064067,
+      "previous_local_estimate_ratio": 0.2328342618384401
+    },
+    {
+      "task_id": 651,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4992,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17381615598885794,
+      "previous_local_estimate_ratio": 0.1338440111420613
+    },
+    {
+      "task_id": 652,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6829,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.23777855153203342,
+      "previous_local_estimate_ratio": 0.2108983286908078
+    },
+    {
+      "task_id": 655,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5186,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1805710306406685,
+      "previous_local_estimate_ratio": 0.23899721448467967
+    },
+    {
+      "task_id": 657,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4486,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15619777158774373,
+      "previous_local_estimate_ratio": 0.199025069637883
+    },
+    {
+      "task_id": 661,
+      "provider_call_count": 12,
+      "max_provider_prompt_tokens": 9852,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.3430362116991644,
+      "previous_local_estimate_ratio": 0.3413649025069638
+    },
+    {
+      "task_id": 673,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6428,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22381615598885793,
+      "previous_local_estimate_ratio": 0.696692200557103
+    },
+    {
+      "task_id": 674,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4362,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15188022284122563,
+      "previous_local_estimate_ratio": 0.5475626740947075
+    },
+    {
+      "task_id": 677,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4736,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1649025069637883,
+      "previous_local_estimate_ratio": 0.20104456824512534
+    },
+    {
+      "task_id": 678,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4984,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1735376044568245,
+      "previous_local_estimate_ratio": 0.41288300835654596
+    },
+    {
+      "task_id": 679,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5429,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18903203342618385,
+      "previous_local_estimate_ratio": 0.18168523676880222
+    },
+    {
+      "task_id": 682,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4768,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.166016713091922,
+      "previous_local_estimate_ratio": 0.1527158774373259
+    },
+    {
+      "task_id": 688,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4490,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15633704735376044,
+      "previous_local_estimate_ratio": 0.16211699164345403
+    },
+    {
+      "task_id": 699,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4929,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1716225626740947,
+      "previous_local_estimate_ratio": 0.1458217270194986
+    },
+    {
+      "task_id": 700,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5472,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1905292479108635,
+      "previous_local_estimate_ratio": 0.15800835654596102
+    },
+    {
+      "task_id": 702,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4557,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1586699164345404,
+      "previous_local_estimate_ratio": 0.4
+    },
+    {
+      "task_id": 707,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4625,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16103760445682452,
+      "previous_local_estimate_ratio": 0.6577646239554318
+    },
+    {
+      "task_id": 717,
+      "provider_call_count": 27,
+      "max_provider_prompt_tokens": 22793,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.7936281337047354,
+      "previous_local_estimate_ratio": 0.6162952646239555
+    },
+    {
+      "task_id": 719,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5036,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1753481894150418,
+      "previous_local_estimate_ratio": 0.21469359331476323
+    },
+    {
+      "task_id": 739,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6551,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22809888579387186,
+      "previous_local_estimate_ratio": 0.2328342618384401
+    },
+    {
+      "task_id": 753,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 7148,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2488857938718663,
+      "previous_local_estimate_ratio": 0.1600974930362117
+    },
+    {
+      "task_id": 760,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 6960,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.24233983286908078,
+      "previous_local_estimate_ratio": 0.6878830083565459
+    },
+    {
+      "task_id": 773,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4769,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16605153203342618,
+      "previous_local_estimate_ratio": 0.26180362116991646
+    },
+    {
+      "task_id": 781,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4787,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1666782729805014,
+      "previous_local_estimate_ratio": 0.1982242339832869
+    },
+    {
+      "task_id": 788,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5734,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1996518105849582,
+      "previous_local_estimate_ratio": 0.3746866295264624
+    },
+    {
+      "task_id": 792,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4468,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15557103064066852,
+      "previous_local_estimate_ratio": 0.6020194986072424
+    },
+    {
+      "task_id": 795,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5693,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1982242339832869,
+      "previous_local_estimate_ratio": 0.4584610027855153
+    },
+    {
+      "task_id": 799,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4674,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16274373259052924,
+      "previous_local_estimate_ratio": 0.3104456824512535
+    },
+    {
+      "task_id": 822,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5847,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20358635097493036,
+      "previous_local_estimate_ratio": 0.16518105849582174
+    },
+    {
+      "task_id": 828,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4923,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17141364902506964,
+      "previous_local_estimate_ratio": 0.17381615598885794
+    },
+    {
+      "task_id": 832,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6154,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.21427576601671308,
+      "previous_local_estimate_ratio": 0.7696378830083566
+    },
+    {
+      "task_id": 840,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5332,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18565459610027854,
+      "previous_local_estimate_ratio": 0.2190459610027855
+    },
+    {
+      "task_id": 841,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4926,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1715181058495822,
+      "previous_local_estimate_ratio": 0.1988509749303621
+    },
+    {
+      "task_id": 843,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5209,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1813718662952646,
+      "previous_local_estimate_ratio": 0.2591225626740947
+    },
+    {
+      "task_id": 852,
+      "provider_call_count": 15,
+      "max_provider_prompt_tokens": 14088,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.4905292479108635,
+      "previous_local_estimate_ratio": 0.24171309192200557
+    },
+    {
+      "task_id": 865,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5708,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1987465181058496,
+      "previous_local_estimate_ratio": 0.3920961002785515
+    },
+    {
+      "task_id": 884,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4667,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1625,
+      "previous_local_estimate_ratio": 0.15362116991643454
+    },
+    {
+      "task_id": 885,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5200,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.181058495821727,
+      "previous_local_estimate_ratio": 0.47977019498607243
+    },
+    {
+      "task_id": 897,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4378,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1524373259052925,
+      "previous_local_estimate_ratio": 0.21960306406685237
+    },
+    {
+      "task_id": 898,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4328,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15069637883008358,
+      "previous_local_estimate_ratio": 0.6872910863509749
+    },
+    {
+      "task_id": 901,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5606,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1951949860724234,
+      "previous_local_estimate_ratio": 0.27040389972144846
+    },
+    {
+      "task_id": 906,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5253,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18290389972144847,
+      "previous_local_estimate_ratio": 0.2658774373259053
+    },
+    {
+      "task_id": 915,
+      "provider_call_count": 7,
+      "max_provider_prompt_tokens": 8256,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.28746518105849583,
+      "previous_local_estimate_ratio": 0.15557103064066852
+    },
+    {
+      "task_id": 920,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6942,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.24171309192200557,
+      "previous_local_estimate_ratio": 0.4584610027855153
+    },
+    {
+      "task_id": 923,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5346,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18614206128133703,
+      "previous_local_estimate_ratio": 0.16991643454038996
+    },
+    {
+      "task_id": 927,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4926,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1715181058495822,
+      "previous_local_estimate_ratio": 0.177541782729805
+    },
+    {
+      "task_id": 928,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5054,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.175974930362117,
+      "previous_local_estimate_ratio": 0.4083217270194986
+    },
+    {
+      "task_id": 936,
+      "provider_call_count": 22,
+      "max_provider_prompt_tokens": 15676,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.5458217270194986,
+      "previous_local_estimate_ratio": 0.5458217270194986
+    },
+    {
+      "task_id": 937,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6048,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2105849582172702,
+      "previous_local_estimate_ratio": 0.36744428969359333
+    },
+    {
+      "task_id": 956,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4525,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1575557103064067,
+      "previous_local_estimate_ratio": 0.1729108635097493
+    },
+    {
+      "task_id": 960,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5110,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17792479108635098,
+      "previous_local_estimate_ratio": 0.40745125348189415
+    },
+    {
+      "task_id": 961,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6798,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2366991643454039,
+      "previous_local_estimate_ratio": 0.2642409470752089
+    },
+    {
+      "task_id": 967,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5892,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20515320334261838,
+      "previous_local_estimate_ratio": 0.372458217270195
+    },
+    {
+      "task_id": 972,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4490,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15633704735376044,
+      "previous_local_estimate_ratio": 0.15139275766016713
+    },
+    {
+      "task_id": 975,
+      "provider_call_count": 9,
+      "max_provider_prompt_tokens": 7824,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2724233983286908,
+      "previous_local_estimate_ratio": 0.24063370473537604
+    },
+    {
+      "task_id": 989,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4778,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16636490250696379,
+      "previous_local_estimate_ratio": 0.3746866295264624
+    },
+    {
+      "task_id": 999,
+      "provider_call_count": 6,
+      "max_provider_prompt_tokens": 5626,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19589136490250697,
+      "previous_local_estimate_ratio": 0.35344707520891366
+    },
+    {
+      "task_id": 1000,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 7238,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2520194986072423,
+      "previous_local_estimate_ratio": 0.3406685236768802
+    },
+    {
+      "task_id": 1016,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 9206,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.3205431754874652,
+      "previous_local_estimate_ratio": 0.1501392757660167
+    },
+    {
+      "task_id": 1017,
+      "provider_call_count": 14,
+      "max_provider_prompt_tokens": 12000,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.4178272980501393,
+      "previous_local_estimate_ratio": 0.7811281337047353
+    },
+    {
+      "task_id": 1019,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5939,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20678969359331476,
+      "previous_local_estimate_ratio": 0.28746518105849583
+    },
+    {
+      "task_id": 1023,
+      "provider_call_count": 6,
+      "max_provider_prompt_tokens": 6909,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2405640668523677,
+      "previous_local_estimate_ratio": 0.28339136490250694
+    },
+    {
+      "task_id": 1026,
+      "provider_call_count": 6,
+      "max_provider_prompt_tokens": 7766,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.27040389972144846,
+      "previous_local_estimate_ratio": 0.22089136490250696
+    },
+    {
+      "task_id": 1031,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5414,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18850974930362116,
+      "previous_local_estimate_ratio": 0.15275069637883007
+    },
+    {
+      "task_id": 1038,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5115,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17809888579387187,
+      "previous_local_estimate_ratio": 0.16211699164345403
+    },
+    {
+      "task_id": 1049,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6524,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22715877437325904,
+      "previous_local_estimate_ratio": 0.3443941504178273
+    },
+    {
+      "task_id": 1052,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6914,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.24073816155988859,
+      "previous_local_estimate_ratio": 0.3043175487465181
+    },
+    {
+      "task_id": 1057,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6344,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22089136490250696,
+      "previous_local_estimate_ratio": 0.177541782729805
+    },
+    {
+      "task_id": 1062,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4639,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16152506963788302,
+      "previous_local_estimate_ratio": 0.17085654596100278
+    },
+    {
+      "task_id": 1064,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4383,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15261142061281338,
+      "previous_local_estimate_ratio": 0.30114902506963787
+    },
+    {
+      "task_id": 1065,
+      "provider_call_count": 10,
+      "max_provider_prompt_tokens": 9260,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.3224233983286908,
+      "previous_local_estimate_ratio": 0.9489554317548746
+    },
+    {
+      "task_id": 1066,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6107,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2126392757660167,
+      "previous_local_estimate_ratio": 0.8018105849582172
+    },
+    {
+      "task_id": 1069,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4618,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16079387186629526,
+      "previous_local_estimate_ratio": 0.19543871866295265
+    },
+    {
+      "task_id": 1070,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4830,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16817548746518104,
+      "previous_local_estimate_ratio": 0.16260445682451252
+    },
+    {
+      "task_id": 1074,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5048,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17576601671309192,
+      "previous_local_estimate_ratio": 0.20358635097493036
+    },
+    {
+      "task_id": 1081,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5466,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19032033426183845,
+      "previous_local_estimate_ratio": 0.16406685236768803
+    },
+    {
+      "task_id": 1085,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 15404,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.5363509749303621,
+      "previous_local_estimate_ratio": 0.3746866295264624
+    },
+    {
+      "task_id": 1104,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 7450,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.25940111420612816,
+      "previous_local_estimate_ratio": 0.15797353760445682
+    },
+    {
+      "task_id": 1106,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4389,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15282033426183844,
+      "previous_local_estimate_ratio": 0.17141364902506964
+    },
+    {
+      "task_id": 1137,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6904,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2403899721448468,
+      "previous_local_estimate_ratio": 0.18182451253481893
+    },
+    {
+      "task_id": 1142,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5407,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18826601671309193,
+      "previous_local_estimate_ratio": 0.3589136490250696
+    },
+    {
+      "task_id": 1144,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4396,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15306406685236768,
+      "previous_local_estimate_ratio": 0.2028899721448468
+    },
+    {
+      "task_id": 1150,
+      "provider_call_count": 17,
+      "max_provider_prompt_tokens": 11261,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.3920961002785515,
+      "previous_local_estimate_ratio": 0.1913300835654596
+    },
+    {
+      "task_id": 1154,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 7292,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.25389972144846795,
+      "previous_local_estimate_ratio": 0.29428969359331475
+    },
+    {
+      "task_id": 1157,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6490,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.225974930362117,
+      "previous_local_estimate_ratio": 0.5363509749303621
+    },
+    {
+      "task_id": 1166,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5995,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20873955431754876,
+      "previous_local_estimate_ratio": 0.696692200557103
+    },
+    {
+      "task_id": 1172,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5774,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20104456824512534,
+      "previous_local_estimate_ratio": 0.3317548746518106
+    },
+    {
+      "task_id": 1186,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4613,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16061977715877437,
+      "previous_local_estimate_ratio": 0.34798050139275766
+    },
+    {
+      "task_id": 1189,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4962,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17277158774373258,
+      "previous_local_estimate_ratio": 0.725591922005571
+    },
+    {
+      "task_id": 1190,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4501,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1567200557103064,
+      "previous_local_estimate_ratio": 0.21034122562674096
+    },
+    {
+      "task_id": 1194,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5237,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18234679665738163,
+      "previous_local_estimate_ratio": 0.19223537604456825
+    },
+    {
+      "task_id": 1197,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 8029,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.27956128133704733,
+      "previous_local_estimate_ratio": 0.5271587743732591
+    },
+    {
+      "task_id": 1201,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4345,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1512883008356546,
+      "previous_local_estimate_ratio": 0.18784818941504178
+    },
+    {
+      "task_id": 1209,
+      "provider_call_count": 6,
+      "max_provider_prompt_tokens": 5401,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18805710306406687,
+      "previous_local_estimate_ratio": 0.2228760445682451
+    },
+    {
+      "task_id": 1216,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4744,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16518105849582174,
+      "previous_local_estimate_ratio": 0.39300139275766016
+    },
+    {
+      "task_id": 1218,
+      "provider_call_count": 11,
+      "max_provider_prompt_tokens": 11488,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.4,
+      "previous_local_estimate_ratio": 0.27040389972144846
+    },
+    {
+      "task_id": 1220,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4496,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1565459610027855,
+      "previous_local_estimate_ratio": 0.7450905292479109
+    },
+    {
+      "task_id": 1230,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5495,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1913300835654596,
+      "previous_local_estimate_ratio": 0.2190459610027855
+    },
+    {
+      "task_id": 1236,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4968,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17298050139275767,
+      "previous_local_estimate_ratio": 0.15428272980501392
+    },
+    {
+      "task_id": 1241,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4581,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15950557103064067,
+      "previous_local_estimate_ratio": 0.3030640668523677
+    },
+    {
+      "task_id": 1247,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 9659,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.33631615598885795,
+      "previous_local_estimate_ratio": 0.2028899721448468
+    },
+    {
+      "task_id": 1249,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6401,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2228760445682451,
+      "previous_local_estimate_ratio": 0.18791782729805015
+    },
+    {
+      "task_id": 1250,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5686,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19798050139275766,
+      "previous_local_estimate_ratio": 0.8594707520891365
+    },
+    {
+      "task_id": 1251,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5210,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1814066852367688,
+      "previous_local_estimate_ratio": 0.1607590529247911
+    },
+    {
+      "task_id": 1253,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4379,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15247214484679666,
+      "previous_local_estimate_ratio": 0.3746866295264624
+    },
+    {
+      "task_id": 1264,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5293,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1842966573816156,
+      "previous_local_estimate_ratio": 0.1347493036211699
+    },
+    {
+      "task_id": 1266,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5015,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17461699164345404,
+      "previous_local_estimate_ratio": 0.16124651810584958
+    },
+    {
+      "task_id": 1283,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4993,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1738509749303621,
+      "previous_local_estimate_ratio": 0.23962395543175488
+    },
+    {
+      "task_id": 1297,
+      "provider_call_count": 12,
+      "max_provider_prompt_tokens": 10520,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.36629526462395545,
+      "previous_local_estimate_ratio": 0.21048050139275767
+    },
+    {
+      "task_id": 1301,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 4971,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17308495821727019,
+      "previous_local_estimate_ratio": 0.5951253481894151
+    },
+    {
+      "task_id": 1306,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5852,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20376044568245125,
+      "previous_local_estimate_ratio": 0.22538300835654596
+    },
+    {
+      "task_id": 1310,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4846,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1687325905292479,
+      "previous_local_estimate_ratio": 0.16152506963788302
+    },
+    {
+      "task_id": 1321,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4654,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16204735376044568,
+      "previous_local_estimate_ratio": 0.15205431754874651
+    },
+    {
+      "task_id": 1322,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4561,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15880919220055711,
+      "previous_local_estimate_ratio": 0.16605153203342618
+    },
+    {
+      "task_id": 1326,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 8047,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.28018802228412254,
+      "previous_local_estimate_ratio": 0.15188022284122563
+    },
+    {
+      "task_id": 1332,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4384,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15264623955431755,
+      "previous_local_estimate_ratio": 0.15797353760445682
+    },
+    {
+      "task_id": 1339,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5106,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17778551532033426,
+      "previous_local_estimate_ratio": 0.32809888579387186
+    },
+    {
+      "task_id": 1346,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6689,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.23290389972144845,
+      "previous_local_estimate_ratio": 0.20473537604456823
+    },
+    {
+      "task_id": 1348,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4547,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.15832172701949862,
+      "previous_local_estimate_ratio": 0.20278551532033426
+    },
+    {
+      "task_id": 1358,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5008,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.17437325905292478,
+      "previous_local_estimate_ratio": 0.166016713091922
+    },
+    {
+      "task_id": 1364,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4655,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16208217270194986,
+      "previous_local_estimate_ratio": 0.211525069637883
+    },
+    {
+      "task_id": 1375,
+      "provider_call_count": 8,
+      "max_provider_prompt_tokens": 8629,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.3004526462395543,
+      "previous_local_estimate_ratio": 0.3430362116991644
+    },
+    {
+      "task_id": 1389,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5324,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18537604456824514,
+      "previous_local_estimate_ratio": 0.5363509749303621
+    },
+    {
+      "task_id": 1390,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5218,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18168523676880222,
+      "previous_local_estimate_ratio": 0.15010445682451254
+    },
+    {
+      "task_id": 1399,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5501,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.19153899721448467,
+      "previous_local_estimate_ratio": 0.21197771587743733
+    },
+    {
+      "task_id": 1406,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4751,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16542479108635097,
+      "previous_local_estimate_ratio": 0.3073467966573816
+    },
+    {
+      "task_id": 1413,
+      "provider_call_count": 9,
+      "max_provider_prompt_tokens": 11655,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.40581476323119775,
+      "previous_local_estimate_ratio": 0.40581476323119775
+    },
+    {
+      "task_id": 1416,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4870,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16956824512534818,
+      "previous_local_estimate_ratio": 0.16274373259052924
+    },
+    {
+      "task_id": 1420,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6864,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.23899721448467967,
+      "previous_local_estimate_ratio": 0.25268105849582173
+    },
+    {
+      "task_id": 1422,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 6911,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.24063370473537604,
+      "previous_local_estimate_ratio": 0.6523676880222842
+    },
+    {
+      "task_id": 1434,
+      "provider_call_count": 11,
+      "max_provider_prompt_tokens": 10316,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.35919220055710305,
+      "previous_local_estimate_ratio": 0.4433147632311978
+    },
+    {
+      "task_id": 1435,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6594,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.22959610027855154,
+      "previous_local_estimate_ratio": 0.2134401114206128
+    },
+    {
+      "task_id": 1439,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 5778,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.20118384401114206,
+      "previous_local_estimate_ratio": 0.20358635097493036
+    },
+    {
+      "task_id": 1442,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 8139,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.28339136490250694,
+      "previous_local_estimate_ratio": 0.2960306406685237
+    },
+    {
+      "task_id": 1444,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 5190,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.18071030640668523,
+      "previous_local_estimate_ratio": 0.23746518105849582
+    },
+    {
+      "task_id": 1447,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4843,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.16862813370473537,
+      "previous_local_estimate_ratio": 0.25090529247910864
+    },
+    {
+      "task_id": 1452,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4617,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1607590529247911,
+      "previous_local_estimate_ratio": 0.2576601671309192
+    },
+    {
+      "task_id": 1454,
+      "provider_call_count": 5,
+      "max_provider_prompt_tokens": 6250,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.2176183844011142,
+      "previous_local_estimate_ratio": 0.2060933147632312
+    },
+    {
+      "task_id": 1456,
+      "provider_call_count": 4,
+      "max_provider_prompt_tokens": 4520,
+      "max_input_token_budget": 28720,
+      "corrected_context_usage_ratio": 0.1573816155988858,
+      "previous_local_estimate_ratio": 0.1562325905292479
+    }
+  ]
+}

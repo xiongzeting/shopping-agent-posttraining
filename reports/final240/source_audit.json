@@ -1,8 +1,8 @@
 {
   "historical_four_stage_source": "重点\\4.评测阶段",
   "grpo230_source": "outputs\\evaluation\\final240-grpo230-harness-improved-deepseek-v4-pro-20260822\\runs\\grpo230",
-  "grpo230_trajectory_source": "重点\\4.评测阶段\\GRPO-step230-Final240-160gold\\trajectories.jsonl",
-  "grpo230_context_usage_recalculation": "GRPO-step230-Final240-160gold\\context-usage-recalculation.json",
+  "grpo230_trajectory_source": "重点\\4.评测阶段\\评测轨迹\\04-GRPO230-v2\\trajectories.jsonl",
+  "grpo230_context_usage_recalculation": "评测轨迹\\04-GRPO230-v2\\context-usage-recalculation.json",
   "grpo230_context_usage_method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
   "grpo230_context_usage_corrected": {
     "p50": 0.25264623955431753,

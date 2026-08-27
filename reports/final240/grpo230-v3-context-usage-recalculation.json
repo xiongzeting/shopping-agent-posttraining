@@ -1,6 +1,6 @@
 {
   "schema_version": "shopping-context-usage-recalculation-v1",
-  "source": "GRPO230-Harness-v3-Final240-4rounds-20260826\\final240-v24-2b-grpo-step230-candidate-context-reset-20260826-r4\\trajectories.jsonl",
+  "source": "评测轨迹\\05-GRPO230-v3-r4\\trajectories.jsonl",
   "method": "For each task, take the maximum actual provider prompt_tokens across model calls and divide by that task's max input-token budget; then compute linearly interpolated quantiles across 240 tasks.",
   "reason": "context_turn_tokens are local pre-request audit estimates and can exceed the actual provider prompt; real context use must be based on model_calls[].usage.prompt_tokens.",
   "tasks": 240,
