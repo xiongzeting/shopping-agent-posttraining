@@ -43,7 +43,7 @@ configs/                    训练、Rollout 与工具配置
 tests/                      单元测试和合同测试
 data/                       小型任务合同、Final-240 定义与审计元数据
 docs/                       Harness、Reward、训练和评测文档
-reports/                    聚合评测页面与训练曲线
+reports/                    聚合评测页面与派生审计结果
 patches/                    veRL 0.8.0 集成补丁
 ```
 
@@ -90,4 +90,3 @@ bash scripts/evaluate.sh
 - 虚拟环境、搜索索引、模型缓存、临时审计目录、简历/PPT和个人面试材料。
 
 因此，仓库可以审查核心实现、运行合同与聚合结果，但若没有对应训练数据和历史 checkpoint，不承诺逐项复现历史数值。第三方来源和许可边界见 [THIRD_PARTY.md](THIRD_PARTY.md)。
-

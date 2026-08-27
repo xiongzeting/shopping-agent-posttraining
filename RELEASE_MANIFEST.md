@@ -7,7 +7,7 @@ This directory is a curated copy of the working project rather than a full works
 - Core Python package, training/evaluation scripts, configs, tests and documentation.
 - ShopSimulator integration runtime without local virtual environments, indexes or logs.
 - Final-240 task contract and small GRPO development task definitions.
-- Aggregate Final-240 dashboard, per-task derived comparison files and GRPO230 training curves.
+- Aggregate Final-240 dashboard and per-task derived comparison files.
 - Environment-variable example file and restrictive `.gitignore`.
 
 ## Excluded
@@ -22,4 +22,3 @@ This directory is a curated copy of the working project rather than a full works
 - Resume documents, slide decks, interview notes and other personal materials.
 
 The copy should remain small enough for ordinary Git hosting without Git LFS. Run a secret and large-file scan again immediately before publishing.
-
