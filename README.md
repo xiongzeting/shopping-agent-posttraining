@@ -80,14 +80,3 @@ bash scripts/evaluate.sh
 ```
 
 首次运行前请将 `.env.example` 复制为 `.env`，再通过环境变量提供模型服务地址和 API Key。不要将 `.env` 或真实密钥提交到 Git。
-
-## 发布边界
-
-本公开副本不包含：
-
-- Base、SFT 或 GRPO 模型权重与 checkpoint；
-- 私有 Teacher 原始轨迹、完整 SFT 样本和 GRPO 训练 Parquet；
-- 原始 Rollout、逐条 LLM Judge 响应、API 调用缓存和运行日志；
-- 虚拟环境、搜索索引、模型缓存、临时审计目录、简历/PPT和个人面试材料。
-
-因此，仓库可以审查核心实现、运行合同与聚合结果，但若没有对应训练数据和历史 checkpoint，不承诺逐项复现历史数值。第三方来源和许可边界见 [THIRD_PARTY.md](THIRD_PARTY.md)。
