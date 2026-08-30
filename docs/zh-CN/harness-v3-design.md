@@ -200,7 +200,10 @@ Guard 不判断品类语义、品牌是否合适、功能证据是否充分、�
 候选达到 3 个时还会增加收敛提醒：Evaluation 把它动态前置到 System Prompt，renderer 同时写入候选
 记忆块。它只给出“停止过度搜索、比较现有候选、满足全部要求就购买”的方向，不指定哪个候选合格。
 循环提醒和候选提醒都不会修改工具白名单或 Environment 的终止计数。
-当前 veRL GRPO Adapter 记录重复动作和上下文事件，但不在 Adapter 内自行推断语义进展。
+当前 veRL GRPO Adapter 读取环境公开的 `progress.no_progress_steps` 与
+`candidate_recovery_required`，应用同样的 3 步提醒、35 步预算提醒和 6 步候选强制收敛。
+veRL 初始 prompt 保持稳定的 8 工具定义，后续每轮由 Action Guard 按页面与候选阶段动态执行
+同一白名单；这是为了避免在不中断 token 轨迹的情况下重建完整 prompt。
 
 ## 8. 终局与基础设施事件
 

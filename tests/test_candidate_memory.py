@@ -3,7 +3,6 @@ import unittest
 from shopping_grpo.environment.actions import action_reject_reason, clickable_buttons, product_ids
 from shopping_grpo.environment.candidate_memory import (
     CANDIDATE_CONVERGENCE_NOTICE_PREFIX,
-    CANDIDATE_DECISION_NOTICE_PREFIX,
     CANDIDATE_MEMORY_END,
     CANDIDATE_MEMORY_START,
     attach_candidate_memory,
@@ -182,7 +181,7 @@ class CandidateMemoryTest(unittest.TestCase):
         self.assertIn("当前详情候选：C2｜ASIN 222222222222", rendered)
         self.assertNotIn("C2｜222222222222｜@", rendered)
 
-    def test_three_candidates_report_capacity_and_strong_decision_notice(self):
+    def test_three_candidates_report_capacity_without_policy_hint(self):
         memory = new_candidate_memory(max_entries=3)
         for index in range(1, 4):
             update_candidate_memory(
@@ -194,17 +193,15 @@ class CandidateMemoryTest(unittest.TestCase):
         rendered = render_candidate_memory(memory, current_asin="000000000003")
 
         self.assertIn(CANDIDATE_CONVERGENCE_NOTICE_PREFIX, rendered)
-        self.assertIn(CANDIDATE_DECISION_NOTICE_PREFIX, rendered)
-        self.assertIn("目前已经至少有3个候选（当前已保存 3 个）", rendered)
-        self.assertIn("完成必要规格后立刻购买", rendered)
-        self.assertIn("累计 6 步无实质进展并触发 Loop 终止", rendered)
+        self.assertNotIn("目前已经至少有3个候选", rendered)
+        self.assertNotIn("完成必要规格后立刻购买", rendered)
         self.assertIn("后续商品仍可正常搜索和核验", rendered)
         self.assertIn("不会写入或替换本候选记忆", rendered)
         self.assertNotIn("绝对禁止", rendered)
         self.assertIn("已核验候选：C1-C3", rendered)
         self.assertNotIn("C1-C6", rendered)
 
-    def test_decision_notice_starts_at_three_candidates(self):
+    def test_candidate_memory_does_not_add_decision_notice(self):
         memory = new_candidate_memory(max_entries=4)
         for index in range(1, 3):
             update_candidate_memory(
@@ -212,16 +209,10 @@ class CandidateMemoryTest(unittest.TestCase):
                 detail_state(f"{index:012d}"),
                 step_count=index,
             )
-        self.assertNotIn(
-            CANDIDATE_DECISION_NOTICE_PREFIX,
-            render_candidate_memory(memory),
-        )
+        self.assertNotIn("候选决策提醒", render_candidate_memory(memory))
 
         update_candidate_memory(memory, detail_state("000000000003"), step_count=3)
-        self.assertIn(
-            CANDIDATE_DECISION_NOTICE_PREFIX,
-            render_candidate_memory(memory),
-        )
+        self.assertNotIn("候选决策提醒", render_candidate_memory(memory))
 
     def test_render_contains_no_hidden_judgment_fields(self):
         memory = new_candidate_memory()

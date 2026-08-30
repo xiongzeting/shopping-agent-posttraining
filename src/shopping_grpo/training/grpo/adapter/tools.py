@@ -8,8 +8,20 @@ from typing import Any
 from uuid import uuid4
 
 from shopping_grpo.environment.actions import action_reject_reason, resolve_action_parameters
+from shopping_grpo.environment.observation import add_step_budget_notice
 from shopping_grpo.environment.tools import tool_call_to_action
 from shopping_grpo.environment.observation import render_structured_observation
+from shopping_grpo.evaluation.rollout import (
+    CANDIDATE_PHASE_CHOOSE,
+    CANDIDATE_PHASE_SELECT,
+    CANDIDATE_PHASE_TERMINAL,
+    EVALUATION_TOOL_SCHEMAS,
+    _active_tool_schemas,
+    _candidate_phase_notice,
+    _candidate_selection_observation,
+    _has_unselected_option,
+    _repeat_loop_result,
+)
 from shopping_grpo.training.grpo.adapter.runtime import (
     current_environment,
     current_runtime_state,
@@ -62,7 +74,25 @@ class ShopSimulatorTool(BaseTool):
         state["action_attempt_after_truncation_count"] += int(
             bool(state.get("latest_observation_truncated"))
         )
-        reason = action_reject_reason(self.name, parameters, observation)
+        active_tool_schemas = _active_tool_schemas(
+            EVALUATION_TOOL_SCHEMAS,
+            len(state["steps"]),
+            latest_observation=observation,
+            candidate_memory=state["candidate_memory"],
+            candidate_phase=state.get("candidate_forced_phase"),
+        )
+        state["active_tool_names"] = [
+            schema["function"]["name"] for schema in active_tool_schemas
+        ]
+        reason = action_reject_reason(
+            self.name,
+            parameters,
+            observation,
+            tool_schemas=active_tool_schemas,
+            candidate_memory=state["candidate_memory"],
+            step_count=len(state["steps"]),
+            evaluation_extensions=True,
+        )
         if reason:
             state["guard_rejection_count"] += 1
             state["guard_rejection_after_truncation_count"] += int(
@@ -86,6 +116,23 @@ class ShopSimulatorTool(BaseTool):
             return ToolResponse(
                 text="Reasoning recorded. Continue with one environment tool call."
             ), 0.0, step
+        if state.get("candidate_forced_phase") and self.name == "finish_without_purchase":
+            terminal_result = _repeat_loop_result(
+                len(state["steps"]) + 1,
+                subreason="no_progress_loop",
+            )
+            step = _append_step(
+                state,
+                self.name,
+                parameters,
+                done=True,
+                reward=float(terminal_result["reward"]),
+            )
+            step["result"] = terminal_result
+            _apply_terminal_result(state, terminal_result)
+            return ToolResponse(
+                text="候选强制收敛阶段选择不购买，按 repeat_loop 终止。"
+            ), 0.0, step
         try:
             # 先转换成环境动作，再在线程中调用同步客户端；终局 reward 只信任
             # 环境返回的 Reward v4 结构，避免训练侧自行猜测分数。
@@ -94,13 +141,20 @@ class ShopSimulatorTool(BaseTool):
                 parameters,
                 observation,
             )
-            action = tool_call_to_action(self.name, env_parameters)
+            if (
+                state.get("candidate_forced_phase") == CANDIDATE_PHASE_CHOOSE
+                and self.name == "open_product"
+            ):
+                action = f"reopen[{str(env_parameters['asin']).strip().upper()}]"
+            else:
+                action = tool_call_to_action(self.name, env_parameters)
             result = await asyncio.to_thread(env.step, action)
             if result.get("observation_state") is not None:
                 observation = render_structured_observation(
                     result["observation_state"],
                     candidate_memory=state["candidate_memory"],
                     step_count=len(state["steps"]) + 1,
+                    show_candidate_memory=False,
                 )
             else:
                 observation = str(
@@ -113,6 +167,7 @@ class ShopSimulatorTool(BaseTool):
                 done=bool(result.get("done", False)),
                 reward=float(result.get("reward", 0.0)),
             )
+            step["result"] = result
         except Exception as exc:
             _terminate(
                 state,
@@ -121,6 +176,73 @@ class ShopSimulatorTool(BaseTool):
             )
             return ToolResponse(text=f"Error: ShopSimulator tool execution failed: {exc}"), 0.0, {"error": state["error"]}
         state["consecutive_guard_rejections"] = 0
+        current_phase = state.get("candidate_forced_phase")
+        if current_phase == CANDIDATE_PHASE_CHOOSE:
+            state["candidate_forced_phase"] = (
+                CANDIDATE_PHASE_SELECT
+                if _has_unselected_option(observation)
+                else CANDIDATE_PHASE_TERMINAL
+            )
+        elif current_phase == CANDIDATE_PHASE_SELECT:
+            state["candidate_forced_phase"] = CANDIDATE_PHASE_TERMINAL
+
+        progress = (result.get("progress") or {}) if isinstance(result, dict) else {}
+        if progress.get("candidate_recovery_required") and current_phase is None:
+            candidate_count = len(state["candidate_memory"].get("entries") or [])
+            event = {
+                "step_index": len(state["steps"]) - 1,
+                "candidate_count": candidate_count,
+                "trigger_progress": dict(progress),
+            }
+            if candidate_count == 0:
+                terminal_result = _repeat_loop_result(
+                    len(state["steps"]),
+                    subreason="no_progress_loop",
+                )
+                step["result"] = terminal_result
+                step["reward"] = float(terminal_result["reward"])
+                step["done"] = True
+                observation = "连续6步无实质进展且没有已核验候选，按 repeat_loop 终止。"
+                event["outcome"] = "repeat_loop_without_candidate"
+                state["candidate_recovery_events"].append(event)
+                _apply_terminal_result(state, terminal_result)
+                state["latest_observation"] = observation
+                return ToolResponse(text=observation), 0.0, step
+            else:
+                try:
+                    reset_result = (
+                        await asyncio.to_thread(env.reset_no_progress)
+                        if hasattr(env, "reset_no_progress")
+                        else {"no_progress_steps": 0, "consecutive_repeats": 0}
+                    )
+                except Exception as exc:
+                    _terminate(
+                        state,
+                        f"candidate_recovery_reset_error:{exc.__class__.__name__}:{exc}",
+                        infrastructure_invalid=True,
+                    )
+                    return ToolResponse(
+                        text="Error: candidate recovery reset failed; trajectory is invalid."
+                    ), 0.0, step
+                state["candidate_forced_phase"] = CANDIDATE_PHASE_CHOOSE
+                observation = _candidate_selection_observation(state["candidate_memory"])
+                event.update({"outcome": "candidate_selection", "reset_result": reset_result})
+                state["candidate_recovery_events"].append(event)
+                state["candidate_phase_entries"] += 1
+
+        if not step["done"]:
+            if state.get("candidate_forced_phase") != CANDIDATE_PHASE_CHOOSE:
+                observation = add_step_budget_notice(
+                    observation,
+                    step_count=len(state["steps"]),
+                    max_steps=state["max_steps"],
+                    candidate_count=0,
+                    no_progress_steps=int(progress.get("no_progress_steps", 0) or 0),
+                )
+            observation = _candidate_phase_notice(
+                observation,
+                state.get("candidate_forced_phase"),
+            )
         if step["done"]:
             state["done"] = True
             state["terminate"] = True
@@ -293,6 +415,22 @@ def _mark_infrastructure_invalid(state, reason):
     state["infrastructure_invalid"] = True
     state["termination_reason"] = reason
     state["error"] = reason
+
+
+def _apply_terminal_result(state, result):
+    """Normalize a Harness-generated Reward v4 terminal into GRPO runtime state."""
+    state["done"] = True
+    state["terminate"] = True
+    state["terminal_result"] = {"done": True, "over": True}
+    state["final_reward"] = float(result["reward"])
+    public_detail = validate_reward(result["reward_detail"])
+    state["reward_version"] = public_detail["reward_version"]
+    state["reward_type"] = public_detail["reward_type"]
+    state["reward_valid"] = public_detail["reward_valid"]
+    state["reward_unverifiable"] = not public_detail["reward_valid"]
+    state["reward_detail"] = public_detail
+    state["termination_reason"] = public_detail["termination_reason"]
+    state["error"] = None
 
 
 def _terminate(state, reason, *, infrastructure_invalid=False):

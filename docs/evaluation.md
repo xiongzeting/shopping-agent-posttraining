@@ -3,18 +3,18 @@
 ## 当前协议
 
 - Benchmark：ShopBench-LH Final-240
-- Environment：ShopSimulator v2.3
+- Environment：ShopSimulator v2.4
 - Reward：Reward v4
-- Termination：v3.1
-- Observation / Tool Schema / Search：v2
+- Termination：v3.2
+- Observation：v2；Evaluation Tool Schema：v2.1；Search：v2.1
 - temperature：0
 - top_p：1
 - max_steps：45
-- max_tokens：512
-- context window：24576
+- max_tokens：768
+- context window：30000
 
-Final-240 已冻结但尚未执行。历史 SFT 的 Final-200 结果仍保存在 `results/sft/`，属于
-Environment v2.1 / Reward v3 的历史实验，不能写入或冒充当前协议结果。
+Final-240 已冻结并完成八组评测。历史 Harness v1/v2 与最新 Harness v3 分组展示，当前
+公开报告统一使用 Reward v4 离线重放，不把旧实验重新标注为 v3。
 
 Benchmark 名称仍为 **ShopBench-LH Benchmark v2**。本次升级只修改正式评测管线、
 统计方法和运行产物，不修改 Final-240 题目、切片、metadata 或已冻结 SHA-256。

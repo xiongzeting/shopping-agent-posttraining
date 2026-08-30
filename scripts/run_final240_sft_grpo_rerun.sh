@@ -248,9 +248,10 @@ evaluate_model() {
     --context-window "$CONTEXT_WINDOW" \
     --context-safety-margin 512 \
     --context-compaction \
-    --observation-token-budget 1536 \
-    --observation-detail-token-budget 4096 \
-    --observation-generic-token-budget 768 \
+    --observation-token-budget 2560 \
+    --observation-detail-token-budget 3072 \
+    --observation-generic-token-budget 512 \
+    --observation-candidate-memory-token-budget 1024 \
     --observation-search-top-k 20 \
     --seed "$SEED" \
     >"$run_dir/evaluation.log" 2>&1

@@ -16,6 +16,7 @@ if str(ROOT / "src") not in sys.path:
 
 from shopping_grpo.environment.manifest import validate_manifest
 from shopping_grpo.evaluation.rollout import OpenAIChatClient, collect_tasks, load_tasks
+from shopping_grpo.runtime_contract import CONTEXT_WINDOW_TOKENS, GENERATION_RESERVE_TOKENS
 
 
 DEFAULT_PROBE = ROOT / "data/grpo/training-probe-v1"
@@ -35,8 +36,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-steps", type=int, default=45)
     parser.add_argument("--temperature", type=float, default=0.7)
     parser.add_argument("--top-p", type=float, default=0.95)
-    parser.add_argument("--max-tokens", type=int, default=512)
-    parser.add_argument("--context-window", type=int, default=25000)
+    parser.add_argument("--max-tokens", type=int, default=GENERATION_RESERVE_TOKENS)
+    parser.add_argument("--context-window", type=int, default=CONTEXT_WINDOW_TOKENS)
     parser.add_argument("--context-safety-margin", type=int, default=512)
     parser.add_argument("--seed", type=int, default=20260810)
     parser.add_argument("--dry-run", action="store_true")
@@ -51,8 +52,10 @@ def main() -> None:
         raise SystemExit("training probe contract requires --rollout-n=4")
     if args.workers < 1:
         raise SystemExit("--workers must be at least 1")
-    if args.context_window != 25000:
-        raise SystemExit("training probe contract requires --context-window=25000")
+    if args.context_window != CONTEXT_WINDOW_TOKENS:
+        raise SystemExit(
+            f"training probe contract requires --context-window={CONTEXT_WINDOW_TOKENS}"
+        )
     manifest = validate_manifest(
         json.loads((ROOT / "data/environment.json").read_text(encoding="utf-8"))
     )

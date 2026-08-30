@@ -28,6 +28,10 @@ from shopping_grpo.evaluation.rollout import (
     load_tasks,
 )
 from shopping_grpo.local_env import load_project_env
+from shopping_grpo.runtime_contract import (
+    CONTEXT_WINDOW_TOKENS,
+    GENERATION_RESERVE_TOKENS,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -90,15 +94,16 @@ def parse_args():
     parser.add_argument(
         "--max-tokens",
         type=int,
-        default=512,
+        default=GENERATION_RESERVE_TOKENS,
         help="单次模型生成上限；防止未调用工具时耗尽完整上下文。",
     )
-    parser.add_argument("--context-window", type=int, default=24576)
+    parser.add_argument("--context-window", type=int, default=CONTEXT_WINDOW_TOKENS)
     parser.add_argument("--context-safety-margin", type=int, default=512)
     parser.add_argument(
         "--context-compaction",
-        action="store_true",
-        help="上下文接近上限时压缩较早的交互；默认关闭。",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="上下文接近上限时压缩较早的完整交互组；Harness v3 默认开启。",
     )
     parser.add_argument("--observation-token-budget", type=int, default=2560)
     parser.add_argument("--observation-detail-token-budget", type=int, default=3072)

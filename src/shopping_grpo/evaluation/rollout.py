@@ -28,6 +28,16 @@ from shopping_grpo.environment.actions import (
     selected_option_ids,
 )
 from shopping_grpo.environment.candidate_memory import new_candidate_memory
+from shopping_grpo.runtime_contract import (
+    CONTEXT_SAFETY_MARGIN_TOKENS,
+    CONTEXT_WINDOW_TOKENS,
+    GENERATION_RESERVE_TOKENS,
+    OBSERVATION_CANDIDATE_MEMORY_TOKEN_BUDGET,
+    OBSERVATION_DETAIL_TOKEN_BUDGET,
+    OBSERVATION_GENERIC_TOKEN_BUDGET,
+    OBSERVATION_SEARCH_TOKEN_BUDGET,
+    OBSERVATION_SEARCH_TOP_K,
+)
 from shopping_grpo.environment.context import (
     ContextBudgetError,
     VllmChatTokenCounter,
@@ -314,17 +324,17 @@ class OpenAIChatClient:
         temperature=0.0,
         top_p=1.0,
         timeout=60,
-        max_tokens=512,
+        max_tokens=GENERATION_RESERVE_TOKENS,
         thinking=False,
         reasoning_effort="high",
-        context_window=None,
-        context_safety_margin=512,
+        context_window=CONTEXT_WINDOW_TOKENS,
+        context_safety_margin=CONTEXT_SAFETY_MARGIN_TOKENS,
         context_compaction_enable=False,
-        observation_token_budget=2560,
-        observation_detail_token_budget=3072,
-        observation_generic_token_budget=512,
-        observation_candidate_memory_token_budget=1024,
-        observation_search_top_k=20,
+        observation_token_budget=OBSERVATION_SEARCH_TOKEN_BUDGET,
+        observation_detail_token_budget=OBSERVATION_DETAIL_TOKEN_BUDGET,
+        observation_generic_token_budget=OBSERVATION_GENERIC_TOKEN_BUDGET,
+        observation_candidate_memory_token_budget=OBSERVATION_CANDIDATE_MEMORY_TOKEN_BUDGET,
+        observation_search_top_k=OBSERVATION_SEARCH_TOP_K,
         seed=20260806,
         tool_choice="auto",
         missing_tool_call_retries=0,
@@ -365,12 +375,14 @@ class OpenAIChatClient:
         if self.context_window is not None:
             if self.context_window <= self.max_tokens + self.context_safety_margin:
                 raise ValueError("context_window must exceed max_tokens plus context_safety_margin")
-            self.token_counter = token_counter or VllmChatTokenCounter(
-                model=self.model,
-                base_url=self.base_url,
-                api_key=self.api_key,
-                timeout=self.timeout,
-            )
+            self.token_counter = token_counter
+            if self.token_counter is None and transport is None:
+                self.token_counter = VllmChatTokenCounter(
+                    model=self.model,
+                    base_url=self.base_url,
+                    api_key=self.api_key,
+                    timeout=self.timeout,
+                )
         else:
             self.token_counter = token_counter
         if self.observation_token_budget is not None:
@@ -399,7 +411,7 @@ class OpenAIChatClient:
         self.last_context_tokens = None
         self.last_call_metrics = None
         request_messages = messages
-        if self.context_window is not None:
+        if self.context_window is not None and self.token_counter is not None:
             input_budget = self.context_window - self.max_tokens - self.context_safety_margin
             original_tokens = int(self.token_counter(messages, tools))
             self.last_context_tokens = original_tokens
@@ -1359,17 +1371,17 @@ def client_from_env(
     temperature=0.0,
     top_p=1.0,
     timeout=60,
-    max_tokens=512,
+    max_tokens=GENERATION_RESERVE_TOKENS,
     thinking=False,
     reasoning_effort="high",
-    context_window=None,
-    context_safety_margin=512,
+    context_window=CONTEXT_WINDOW_TOKENS,
+    context_safety_margin=CONTEXT_SAFETY_MARGIN_TOKENS,
     context_compaction_enable=False,
-    observation_token_budget=2560,
-    observation_detail_token_budget=3072,
-    observation_generic_token_budget=512,
-    observation_candidate_memory_token_budget=1024,
-    observation_search_top_k=20,
+    observation_token_budget=OBSERVATION_SEARCH_TOKEN_BUDGET,
+    observation_detail_token_budget=OBSERVATION_DETAIL_TOKEN_BUDGET,
+    observation_generic_token_budget=OBSERVATION_GENERIC_TOKEN_BUDGET,
+    observation_candidate_memory_token_budget=OBSERVATION_CANDIDATE_MEMORY_TOKEN_BUDGET,
+    observation_search_top_k=OBSERVATION_SEARCH_TOP_K,
     seed=20260806,
 ):
     api_key = api_key or os.environ.get("OPENAI_API_KEY")

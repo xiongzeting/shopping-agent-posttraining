@@ -1663,7 +1663,7 @@ class RolloutTest(unittest.TestCase):
         self.assertEqual(captured["url"], "https://api.example.test/v1/chat/completions")
         self.assertEqual(captured["payload"]["model"], "deepseek-chat")
         self.assertEqual(captured["payload"]["tools"], [{"type": "function"}])
-        self.assertEqual(captured["payload"]["max_tokens"], 512)
+        self.assertEqual(captured["payload"]["max_tokens"], 768)
         self.assertEqual(captured["payload"]["temperature"], 0.2)
         self.assertEqual(captured["headers"]["Authorization"], "Bearer secret")
         self.assertEqual(

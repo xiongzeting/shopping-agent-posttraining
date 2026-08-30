@@ -30,6 +30,7 @@ from shopping_grpo.evaluation.rollout import (
     rollout_interrupted,
     SYSTEM_PROMPT,
 )
+from shopping_grpo.runtime_contract import CONTEXT_WINDOW_TOKENS, GENERATION_RESERVE_TOKENS
 from shopping_grpo.local_env import load_project_env
 
 
@@ -111,13 +112,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--top-p", type=float, default=1.0)
     parser.add_argument("--timeout", type=int, default=180)
-    parser.add_argument("--max-tokens", type=int, default=512)
+    parser.add_argument("--max-tokens", type=int, default=GENERATION_RESERVE_TOKENS)
     parser.add_argument("--max-steps", type=int, default=45)
     parser.add_argument("--thinking", action="store_true")
     parser.add_argument("--reasoning-effort", choices=("high", "max"), default="high")
-    parser.add_argument("--context-window", type=int, default=0)
+    parser.add_argument("--context-window", type=int, default=CONTEXT_WINDOW_TOKENS)
     parser.add_argument("--context-safety-margin", type=int, default=512)
-    parser.add_argument("--context-compaction", action="store_true")
+    parser.add_argument(
+        "--context-compaction",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+    )
     parser.add_argument("--observation-token-budget", type=int, default=2560)
     parser.add_argument("--observation-detail-token-budget", type=int, default=3072)
     parser.add_argument("--observation-generic-token-budget", type=int, default=512)
@@ -241,6 +246,7 @@ def collect_until_target(
     excluded_task_ids=(),
     system_prompt=None,
     system_prompt_factory=None,
+    evaluation_extensions=True,
 ):
     """Collect concurrently without scheduling more possible successes than needed."""
 
@@ -284,6 +290,7 @@ def collect_until_target(
                 max_steps=max_steps,
                 attempt_index=attempt_index,
                 system_prompt=task_system_prompt,
+                evaluation_extensions=evaluation_extensions,
             )
             pending[future] = (task, attempt_index)
 
@@ -527,6 +534,7 @@ def main() -> int:
                     system_prompt_factory=lambda task: collection_system_prompt(
                         task.get("teacher_strategy")
                     ),
+                    evaluation_extensions=True,
                 )
                 print(f"collected_raw={len(written)}")
             else:
@@ -544,6 +552,7 @@ def main() -> int:
                     system_prompt_factory=lambda task: collection_system_prompt(
                         task.get("teacher_strategy")
                     ),
+                    evaluation_extensions=True,
                 )
                 print(f"collected_raw={len(written)} accepted_total={accepted}")
         except CollectionInfrastructureError as exc:

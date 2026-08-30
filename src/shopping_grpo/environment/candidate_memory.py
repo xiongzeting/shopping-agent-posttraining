@@ -19,7 +19,6 @@ CANDIDATE_MEMORY_END_V1 = "[/CANDIDATE_MEMORY_V1]"
 CANDIDATE_MEMORY_START = "[CANDIDATE_MEMORY_V2]"
 CANDIDATE_MEMORY_END = "[/CANDIDATE_MEMORY_V2]"
 CANDIDATE_CONVERGENCE_NOTICE_PREFIX = "候选记忆提示:"
-CANDIDATE_DECISION_NOTICE_PREFIX = "候选决策提醒:"
 DEFAULT_MAX_ENTRIES = 6
 MAX_ENTRIES_LIMIT = 6
 MAX_RENDERED_ENTRY_CHARS = 156
@@ -203,12 +202,6 @@ def render_candidate_memory(
         lines = [
             CANDIDATE_MEMORY_START,
         ]
-        if len(entries) >= 3:
-            lines.append(
-                f"{CANDIDATE_DECISION_NOTICE_PREFIX} 目前已经至少有3个候选（当前已保存 {len(entries)} 个）。"
-                "立即比较这些候选：如果其中有满足全部要求的商品，完成必要规格后立刻购买；"
-                "不要继续过度搜索、重复往返或无进展探索，以免累计 6 步无实质进展并触发 Loop 终止。"
-            )
         if len(entries) >= max_entries:
             lines.append(
                 f"{CANDIDATE_CONVERGENCE_NOTICE_PREFIX} 已保存 {len(entries)} 个候选，"

@@ -20,14 +20,27 @@ from web_agent_site.engine.reward_features import compile_reward_features
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "重点/4.评测阶段"
-LABELS = ("base", "sft", "grpo50", "grpo100", "grpo230", "qwen38_27b")
+LABELS = (
+    "base",
+    "sft_normal1000",
+    "sft",
+    "grpo50",
+    "grpo100",
+    "grpo230",
+    "qwen38_27b",
+    "grpo230_v3",
+    "qwen38_27b_v3",
+)
 DISPLAY = {
-    "base": "Base·Harness v1",
-    "sft": "SFT·Harness v1",
-    "grpo50": "GRPO50·Harness v1",
-    "grpo100": "GRPO100·Harness v1",
-    "grpo230": "GRPO230·Harness v2",
-    "qwen38_27b": "Qwen3.8-27B·Harness v2",
+    "base": "Base",
+    "sft_normal1000": "普通 SFT v1",
+    "sft": "纠错 SFT v1",
+    "grpo50": "GRPO50",
+    "grpo100": "GRPO100",
+    "grpo230": "GRPO230·Harness",
+    "qwen38_27b": "Qwen3.8-27B",
+    "grpo230_v3": "GRPO230 v3",
+    "qwen38_27b_v3": "Qwen3.8-27B v3",
 }
 PURCHASE_TYPES = {
     "wrong_purchase",
@@ -483,7 +496,7 @@ def _overlay_payload(model_reports: dict[str, dict]) -> dict:
         pairwise[f"{left}_to_{right}"] = dict(sorted(counts.items()))
 
     return {
-        "schema_version": "reward-v4-six-model-overlay-v2",
+        "schema_version": "reward-v4-nine-model-overlay-v3",
         "reward_policy": {
             "gold_purchase": DEFAULT_REWARDS["gold_purchase"],
             "valid_alternative_purchase": DEFAULT_REWARDS[
@@ -793,7 +806,7 @@ def main() -> None:
         )
 
     report = {
-        "schema_version": "reward-v4-six-model-replay-v1",
+        "schema_version": "reward-v4-nine-model-replay-v2",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "reward_commit": args.reward_commit,
         "task_count": len(task_ids),

@@ -1,5 +1,8 @@
 {
   "historical_four_stage_source": "重点\\4.评测阶段",
+  "sft_normal1000_rollout_source": "outputs\\evaluation\\final240-harness-v1-sft-normal1000-control-v1-30k-12tool-20way-768-context30000-maxsteps45-temp00-topp1-20260829-r2",
+  "sft_normal1000_judge_source": "outputs\\evaluation\\final240-harness-v1-sft-normal1000-control-v1-30k-12tool-20way-768-context30000-maxsteps45-temp00-topp1-20260829-r2-deepseek-v4-pro-judge-20260830",
+  "sft_normal1000_judges_sha256": "b44189d2c3fcca81d531c926bce7976b94d49161da2d81ebdd7040bba8824f82",
   "grpo230_source": "outputs\\evaluation\\final240-grpo230-harness-improved-deepseek-v4-pro-20260822\\runs\\grpo230",
   "grpo230_trajectory_source": "重点\\4.评测阶段\\评测轨迹\\04-GRPO230-v2\\trajectories.jsonl",
   "grpo230_context_usage_recalculation": "评测轨迹\\04-GRPO230-v2\\context-usage-recalculation.json",
@@ -50,6 +53,7 @@
   "frozen_rubric_sha256": "a911423cb9dbba7fc65ee0a3830276a12c62e0f3f99b6b704ffef3a94ae8c0ea",
   "judge_protocol_aligned": true,
   "newly_judged_models": [
+    "sft_normal1000",
     "grpo230",
     "qwen38_27b",
     "grpo230_v3",

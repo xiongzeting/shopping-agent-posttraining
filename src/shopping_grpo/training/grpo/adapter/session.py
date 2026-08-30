@@ -10,6 +10,7 @@ import asyncio
 
 from shopping_grpo.environment.client import ShopAgentEnv
 from shopping_grpo.environment.observation import render_structured_observation
+from shopping_grpo.runtime_contract import MAX_STEPS
 from shopping_grpo.training.grpo.adapter.runtime import current_environment, current_runtime_state, make_runtime_state
 
 
@@ -20,7 +21,7 @@ class ShopSimulatorSession:
         self,
         base_url: str = "http://127.0.0.1:5700",
         timeout: int = 60,
-        max_steps: int = 45,
+        max_steps: int = MAX_STEPS,
         required_environment_version: str | None = None,
         env_factory=None,
     ):
@@ -42,6 +43,8 @@ class ShopSimulatorSession:
         try:
             # ShopAgentEnv 使用阻塞 urllib；放到线程中不会阻塞 veRL 的事件循环。
             initial = await asyncio.to_thread(self.env.reset, int(task_id))
+            if hasattr(self.env, "configure_candidate_recovery"):
+                await asyncio.to_thread(self.env.configure_candidate_recovery)
         except Exception:
             try:
                 await asyncio.to_thread(self.env.release)
@@ -70,6 +73,7 @@ class ShopSimulatorSession:
                 initial["observation_state"],
                 candidate_memory=self.state["candidate_memory"],
                 step_count=0,
+                show_candidate_memory=False,
             )
             self.state["environment_version"] = actual_version
         else:

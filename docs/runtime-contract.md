@@ -64,8 +64,9 @@ Final-240 的默认协议为：
 | `temperature` | 0 |
 | `top_p` | 1 |
 | `max_steps` | 45 |
-| 单回合 `max_tokens` | 512 |
-| context window | 24576 |
+| 单回合 `max_tokens` | 768 |
+| context window | 30000 |
+| 输入预算 | 28720 tokens（另留 768 generation + 512 safety margin） |
 | 搜索页 Observation | 2560 tokens，最多 20 个商品 |
 | 商品详情 Observation | 3072 tokens |
 | 搜索首页、信息子页、终局与普通页 Observation | 512 tokens |
@@ -76,11 +77,10 @@ Schema 和 Harness 参数必须一致。
 
 ## 当前数据与结果边界
 
-- Final-240 已冻结但 `evaluated=false`；
-- 当前合同下没有正式 Baseline、SFT 或 GRPO 指标；
-- `data/sft/` 是 Environment v2.4 / Reward v4 当前 canonical 数据，训练尚未执行；
-- `results/sft/` 仍属于 Environment v2.1 / Reward v3 历史基线；
-- `data/grpo/`、GRPO checkpoint 和 GRPO 结果尚不存在；
+- Final-240 已冻结并完成八组独立评测；历史 Harness v1/v2 结果保持原版本标记，v3 结果使用当前合同；
+- 当前公开报告统一用 Reward v4 离线重放，并使用冻结 Rubric 与轨迹盲评审计；
+- 新训练、Teacher 采集、推理和评测入口默认使用 Harness v3；历史数据和 checkpoint 不会被重新标注；
+- 聚合结果位于 `reports/final240/`，公开仓库不包含原始轨迹、Judge JSONL、训练数据或 checkpoint；
 - 特殊无解、澄清、多商品购物和相似推荐不属于当前任务合同。
 
-项目状态以 `PROJECT_STATUS.md` 为准，评测结构见 `docs/evaluation.md`。
+评测结构与发布边界见 `docs/evaluation.md` 和 `reports/final240/audit-report.md`。

@@ -15,6 +15,18 @@ from shopping_grpo.environment.projection import (
     ObservationProjectionError,
     project_observation,
 )
+from shopping_grpo.runtime_contract import (
+    CONTEXT_INPUT_BUDGET_TOKENS,
+    CONTEXT_SAFETY_MARGIN_TOKENS,
+    CONTEXT_WINDOW_TOKENS,
+    GENERATION_RESERVE_TOKENS,
+    MAX_STEPS,
+    OBSERVATION_CANDIDATE_MEMORY_TOKEN_BUDGET,
+    OBSERVATION_DETAIL_TOKEN_BUDGET,
+    OBSERVATION_GENERIC_TOKEN_BUDGET,
+    OBSERVATION_SEARCH_TOKEN_BUDGET,
+    OBSERVATION_SEARCH_TOP_K,
+)
 from shopping_grpo.training.grpo.adapter.runtime import (
     current_runtime_state,
     record_observation_projection,
@@ -33,20 +45,20 @@ class ShoppingToolAgentLoop(ToolAgentLoop):
         *args,
         base_url="http://127.0.0.1:5700",
         timeout=60,
-        max_steps=45,
+        max_steps=MAX_STEPS,
         required_environment_version=None,
         reward_mode="native",
-        context_window_tokens=30000,
-        context_generation_reserve_tokens=768,
-        context_safety_margin_tokens=512,
-        context_input_budget_tokens=28720,
+        context_window_tokens=CONTEXT_WINDOW_TOKENS,
+        context_generation_reserve_tokens=GENERATION_RESERVE_TOKENS,
+        context_safety_margin_tokens=CONTEXT_SAFETY_MARGIN_TOKENS,
+        context_input_budget_tokens=CONTEXT_INPUT_BUDGET_TOKENS,
         context_preserve_recent_groups=1,
-        context_compaction_enable=False,
-        observation_token_budget=2560,
-        observation_detail_token_budget=3072,
-        observation_generic_token_budget=512,
-        observation_candidate_memory_token_budget=1024,
-        observation_search_top_k=20,
+        context_compaction_enable=True,
+        observation_token_budget=OBSERVATION_SEARCH_TOKEN_BUDGET,
+        observation_detail_token_budget=OBSERVATION_DETAIL_TOKEN_BUDGET,
+        observation_generic_token_budget=OBSERVATION_GENERIC_TOKEN_BUDGET,
+        observation_candidate_memory_token_budget=OBSERVATION_CANDIDATE_MEMORY_TOKEN_BUDGET,
+        observation_search_top_k=OBSERVATION_SEARCH_TOP_K,
         env_factory=None,
         **kwargs,
     ):
@@ -351,6 +363,10 @@ class ShoppingToolAgentLoop(ToolAgentLoop):
                 "candidate_memory_evictions": int(
                     state["candidate_memory"]["evictions"]
                 ),
+                "candidate_forced_phase": state.get("candidate_forced_phase"),
+                "candidate_recovery_events": list(state["candidate_recovery_events"]),
+                "candidate_phase_entries": int(state["candidate_phase_entries"]),
+                "active_tool_names": list(state["active_tool_names"]),
             }
             # veRL 0.8 only exposes fields nested under reward_extra_info to
             # extract_reward(); keep the flat copy for trajectory diagnostics.

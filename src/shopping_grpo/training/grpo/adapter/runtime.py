@@ -9,6 +9,7 @@ import math
 from collections.abc import Mapping
 
 from shopping_grpo.environment.candidate_memory import new_candidate_memory
+from shopping_grpo.runtime_contract import CANDIDATE_MEMORY_LIMIT
 
 
 current_environment: ContextVar = ContextVar("shopsimulator_environment", default=None)
@@ -79,7 +80,14 @@ def make_runtime_state(task_id: int, max_steps: int) -> dict:
         "guard_rejection_after_truncation_count": 0,
         "action_attempt_after_truncation_count": 0,
         "tool_call_truncation_count": 0,
-        "candidate_memory": new_candidate_memory(),
+        "candidate_memory": new_candidate_memory(
+            max_entries=CANDIDATE_MEMORY_LIMIT,
+            stable_candidate_ids=True,
+        ),
+        "candidate_forced_phase": None,
+        "candidate_recovery_events": [],
+        "candidate_phase_entries": 0,
+        "active_tool_names": [],
     }
 
 

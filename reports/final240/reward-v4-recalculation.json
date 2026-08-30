@@ -1,14 +1,17 @@
 {
   "schema_version": "dashboard-reward-v4-recalculation-v2",
-  "created_at": "2026-08-24T16:28:35.280691+00:00",
+  "created_at": "2026-08-29T16:53:27.027646+00:00",
   "scope": "reward_and_classification_replay",
   "dashboard_models": [
     "base",
+    "sft_normal1000",
     "sft",
     "grpo50",
     "grpo100",
     "grpo230",
-    "qwen38_27b"
+    "qwen38_27b",
+    "grpo230_v3",
+    "qwen38_27b_v3"
   ],
   "denominator_per_model": 240,
   "method": {
@@ -40,6 +43,22 @@
         "max_steps": 1,
         "repeat_loop": 45,
         "wrong_purchase": 1
+      }
+    },
+    "sft_normal1000": {
+      "strict_gold": 124,
+      "purchase_success": 139,
+      "reward_valid": 240,
+      "mean_final_reward": 0.19395833333333332,
+      "mean_weighted_score": 0.6585763888888889,
+      "reward_type_counts": {
+        "gold_purchase": 124,
+        "guard_rejection": 1,
+        "max_steps": 3,
+        "partial_alternative_purchase": 3,
+        "repeat_loop": 70,
+        "valid_alternative_purchase": 15,
+        "wrong_purchase": 24
       }
     },
     "sft": {
@@ -122,6 +141,38 @@
         "repeat_loop": 9,
         "valid_alternative_purchase": 26,
         "wrong_purchase": 53
+      }
+    },
+    "grpo230_v3": {
+      "strict_gold": 176,
+      "purchase_success": 195,
+      "reward_valid": 240,
+      "mean_final_reward": 0.6013750000000001,
+      "mean_weighted_score": 0.9117212301587301,
+      "reward_type_counts": {
+        "gold_purchase": 176,
+        "guard_rejection": 4,
+        "max_steps": 4,
+        "partial_alternative_purchase": 4,
+        "repeat_loop": 1,
+        "valid_alternative_purchase": 19,
+        "wrong_purchase": 32
+      }
+    },
+    "qwen38_27b_v3": {
+      "strict_gold": 163,
+      "purchase_success": 181,
+      "reward_valid": 239,
+      "mean_final_reward": 0.5695416666666666,
+      "mean_weighted_score": 0.8769824735449736,
+      "reward_type_counts": {
+        "early_abstain": 8,
+        "gold_purchase": 163,
+        "partial_alternative_purchase": 7,
+        "repeat_loop": 8,
+        "reward_unverifiable": 1,
+        "valid_alternative_purchase": 18,
+        "wrong_purchase": 35
       }
     }
   }

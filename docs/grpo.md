@@ -1,6 +1,7 @@
 # GRPO 状态
 
-GRPO 尚未开始。仓库只包含运行代码和基础配置，不包含可声明的训练结果。
+项目已完成 GRPO100 与 GRPO230 历史训练及 Final-240 评测。公开仓库提供运行代码、配置、
+聚合结果和审计材料，但不发布训练 Parquet、原始 rollout、checkpoint 或模型权重。
 
 ## 已具备
 
@@ -16,16 +17,14 @@ GRPO 尚未开始。仓库只包含运行代码和基础配置，不包含可声
 视为低差异组；初次采样失败后最多再采两次，第三次仍无有效信号则丢弃该组。
 动态采样不包含难度课程或基于Final评测的任务路由。
 
-## 尚未具备
+## 已有结果
 
-- GRPO train / validation Parquet；
-- 正式 rollout；
-- checkpoint 或合并模型；
-- 训练曲线和稳定性结果；
-- Final-240 评测；
-- 相比 SFT 的提升结论。
+- GRPO100 v1：Strict Gold 63.75%，Gold + Valid 72.08%；
+- GRPO230 v2：Strict Gold 67.92%，Gold + Valid 75.00%；
+- GRPO230 v3：Strict Gold 73.33%，Gold + Valid 81.25%；
+- 完整分组、Reward v4 重放和盲评审计见 `reports/final240/`。
 
-## 开始训练前
+## 新一轮训练前
 
 1. 用`data/grpo/training-probe-v1/calibration-200.jsonl`完成首轮在线probe；
 2. 校验 task ID、商品 family、环境 manifest 和数据 SHA；
