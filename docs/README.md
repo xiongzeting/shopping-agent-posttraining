@@ -28,3 +28,7 @@
 [`rewardv1,v2,v3.md`](../版本内/rewardv1,v2,v3.md)，但不属于当前运行合同。
 
 项目总体状态以 [PROJECT_STATUS.md](../PROJECT_STATUS.md) 为准。
+
+## 项目设计与面试资料
+
+- [完整项目设计、版本演进与面试资料](zh-CN/project/README.md)

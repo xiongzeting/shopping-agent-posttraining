@@ -25,6 +25,8 @@ Final-240 与训练数据零重叠，包含 Core-180 和 Challenge-60。当前�
 
 完整聚合结果见 [Final-240 Dashboard](reports/final240/dashboard.html) 和 [审计报告](reports/final240/audit-report.md)。
 
+项目设计、版本演进、数据清洗、Harness 与面试问答见 [中文项目资料](docs/zh-CN/project/README.md)。
+
 ## 核心设计
 
 - **Agent Harness：** System Prompt、页面级动态 Tool Schema、结构化 Observation、Action Guard 和单工具串行执行共同约束多轮交互。
